@@ -1,33 +1,85 @@
 import React, { useState } from "react";
-import { Card, Container, Divider, Grid, Typography } from "@mui/material";
+import {
+  Card,
+  Container,
+  Divider,
+  Grid,
+  Typography,
+  Select,
+  MenuItem,
+} from "@mui/material";
 import SelfChallengeSubject from "data/quiz/SelfChallengeSubject";
-import SelfChallengeSubjectUnits from "sub-components/landings/course-lead/SelfChallengeSubjectUnits";
+import SelfChallengeSubjectUnits from "sub-components/landings/course-lead/SelfChallengeQuestionAndTime";
+import SelfChallengeUnits from "data/quiz/SelfChallengeUnits";
+import SelfChallengeQuestionAndTime from "sub-components/landings/course-lead/SelfChallengeQuestionAndTime";
 
-const Categories = ({ selectedCategory, handleCategorySelect }) => {
+const Categories = ({
+  selectedCategory,
+  handleCategorySelect,
+  selectedUnit,
+  handleUnitSelect,
+}) => {
   return (
     <div style={{ padding: 4 }}>
       <Divider textAlign="center" sx={{ marginBottom: "20px" }}>
         <h3>SELECT SUBJECT</h3>
       </Divider>
       <div>
-        {SelfChallengeSubject.map((item, index) => (
-          <Typography
-            key={index}
-            variant="body1"
-            onClick={() => handleCategorySelect(index)}
-            style={{
-              backgroundColor: selectedCategory === index ? "#3c65c4" : "white",
-              color: selectedCategory === index ? "white" : "black",
-              borderRadius: "20px",
-              boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.1)",
-              padding: "10px",
-              marginBottom: "10px",
-              cursor: "pointer",
-            }}
-          >
-            {item.name}
-          </Typography>
-        ))}
+        <Select
+          fullWidth
+          value={selectedCategory}
+          onChange={(event) => handleCategorySelect(event.target.value)}
+          style={{
+            marginBottom: "10px",
+            borderRadius: "20px",
+            boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.1)",
+            cursor: "pointer",
+          }}
+        >
+          {SelfChallengeSubject.map((item, index) => (
+            <MenuItem
+              key={index}
+              value={index}
+              style={{
+                display: "block",
+                padding: "10px",
+                cursor: "pointer",
+              }}
+            >
+              {item.name}
+            </MenuItem>
+          ))}
+        </Select>
+      </div>
+      <Divider textAlign="center" sx={{ marginBottom: "20px" }}>
+        <h3>SELECT UNITS</h3>
+      </Divider>
+      <div>
+        <Select
+          fullWidth
+          value={selectedUnit}
+          onChange={(event) => handleUnitSelect(event.target.value)}
+          style={{
+            marginBottom: "10px",
+            borderRadius: "20px",
+            boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.1)",
+            cursor: "pointer",
+          }}
+        >
+          {SelfChallengeUnits[selectedCategory].map((item, index) => (
+            <MenuItem
+              key={index}
+              value={index}
+              style={{
+                display: "block",
+                padding: "10px",
+                cursor: "pointer",
+              }}
+            >
+              {item.name}
+            </MenuItem>
+          ))}
+        </Select>
       </div>
     </div>
   );
@@ -35,10 +87,16 @@ const Categories = ({ selectedCategory, handleCategorySelect }) => {
 
 const SelfChallengePage = () => {
   const [selectedCategory, setSelectedCategory] = useState(0);
+  const [selectedUnit, setSelectedUnit] = useState(0);
 
   const handleCategorySelect = (index) => {
     setSelectedCategory(index);
+    setSelectedUnit(0);
   };
+  const handleUnitSelect = (index) => {
+    setSelectedUnit(index);
+  };
+
   return (
     <Container className="py-8 py-lg-8 bg-light">
       <Card>
@@ -47,10 +105,12 @@ const SelfChallengePage = () => {
             <Categories
               selectedCategory={selectedCategory}
               handleCategorySelect={handleCategorySelect}
+              selectedUnit={selectedUnit}
+              handleUnitSelect={handleUnitSelect}
             />
           </Grid>
           <Grid item xs={8} m={2}>
-            <SelfChallengeSubjectUnits selectedCategory={selectedCategory} />
+            <SelfChallengeQuestionAndTime selectedCategory={selectedCategory} />
           </Grid>
         </Grid>
       </Card>

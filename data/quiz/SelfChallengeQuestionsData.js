@@ -1,87 +1,92 @@
 const SelfChallengeQuestionsData = [
   [
     {
-      name: "Daily Quiz",
-      subtitle: "Questions",
+      id: 0,
+      count: 5,
+    },
+    {
+      id: 1,
       count: 10,
     },
-  ],
-  [
     {
-      name: "Biology Discovery",
-      subtitle: "Questions",
-      count: 56,
+      id: 2,
+      count: 15,
     },
     {
-      name: "Digestive System",
-      subtitle: "Questions",
-      count: 58,
-    },
-    {
-      name: "Respiratory System",
-      subtitle: "Questions",
-      count: 65,
-    },
-    {
-      name: "Respiratory System",
-      subtitle: "Questions",
-      count: 65,
-    },
-    {
-      name: "Respiratory System",
-      subtitle: "Questions",
-      count: 65,
+      id: 3,
+      count: 20,
     },
   ],
   [
     {
-      name: "Chemistry Quiz",
-      subtitle: "Questions",
-      count: 34,
+      id: 0,
+      count: 5,
     },
     {
-      name: "Carbon ",
-      subtitle: "Questions",
-      count: 85,
+      id: 1,
+      count: 10,
     },
     {
-      name: "Atoms and Molecules",
-      subtitle: "Questions",
-      count: 75,
-    },
-  ],
-  [
-    {
-      name: "Maths ",
-      subtitle: "Questions",
-      count: 23,
+      id: 2,
+      count: 15,
     },
     {
-      name: "Trigonometry",
-      subtitle: "Questions",
-      count: 91,
-    },
-    {
-      name: "Probability",
-      subtitle: "Questions",
-      count: 90,
+      id: 3,
+      count: 20,
     },
   ],
   [
     {
-      name: "Physics Quiz",
-      subtitle: "Questions",
-      count: 54,
+      id: 0,
+      count: 5,
     },
     {
-      name: "Optics",
-      subtitle: "Questions",
-      count: 69,
+      id: 1,
+      count: 10,
     },
     {
-      name: "Semiconductors",
-      subtitle: "Questions",
-      count: 89,
+      id: 2,
+      count: 15,
+    },
+    {
+      id: 3,
+      count: 20,
+    },
+  ],
+  [
+    {
+      id: 0,
+      count: 5,
+    },
+    {
+      id: 1,
+      count: 10,
+    },
+    {
+      id: 2,
+      count: 15,
+    },
+    {
+      id: 3,
+      count: 20,
+    },
+  ],
+  [
+    {
+      id: 0,
+      count: 5,
+    },
+    {
+      id: 1,
+      count: 10,
+    },
+    {
+      id: 2,
+      count: 15,
+    },
+    {
+      id: 3,
+      count: 20,
     },
   ],
 ];

@@ -29,7 +29,7 @@ const NavbarDefault = [
       {
         id: uuid(),
         menuitem: "Contest Play",
-        link: "/quiz-section/ContesPlay",
+        link: "/quiz-section/ContestPlay",
       },
       {
         id: uuid(),

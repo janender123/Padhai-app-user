@@ -7,10 +7,13 @@ import AccordionDetails from "@material-ui/core/AccordionDetails";
 import AccordionSummary from "@material-ui/core/AccordionSummary";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import { Divider, Typography } from "@mui/material";
+import { Button } from "react-bootstrap";
 import SubjectUnitsData from "data/quiz/SubjectUnitsData";
 import TabPanelData from "data/quiz/TabPanelData";
 import { Cursor } from "react-simple-typewriter";
 import SelfChallengeQuestionsData from "data/quiz/SelfChallengeQuestionsData";
+import SelfChallengeTimeData from "data/quiz/SelfChallengeTimeData";
+import Link from "next/link";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -42,11 +45,12 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: "bold",
   },
   tab: {
-    minWidth: 0,
+    minWidth: '150px',
+    maxWidth: '150px',
     padding: theme.spacing(1),
     paddingRight: theme.spacing(2),
     flexGrow: 1,
-    margin: "3px",
+    margin: "6.5px",
     fontWeight: "bold",
     color: "initial",
     backgroundColor: "white",
@@ -115,28 +119,28 @@ function TabPanel(props) {
   );
 }
 
-export default function SelfChallengeSubjectUnits({ selectedCategory }) {
+export default function SelfChallengeQuestionAndTime({ selectedCategory }) {
   const classes = useStyles();
-  const [value, setValue] = React.useState(0);
+  const [qvalue, setqValue] = React.useState(0);
 
-  const handleChange = (e, newValue) => {
-    setValue(newValue);
+  const handleqChange = (e, newValue) => {
+    setqValue(newValue);
   };
-  const handleUnitClick = (index, unlockLength) => {
-    if (index < unlockLength) {
-      window.location.href = "/marketing/student/QuizZonePage";
-    } else {
-      alert("Please complete unlock level first");
-    }
+
+  const [uvalue, setuValue] = React.useState(0);
+
+  const handleuChange = (e, newValue) => {
+    setuValue(newValue);
   };
+
   return (
     <div className={classes.root}>
       <Divider textAlign="center" sx={{ marginBottom: "20px" }}>
         <h3>SELECT NUMBER OF QUESTIONS</h3>
       </Divider>
       <Tabs
-        value={value}
-        onChange={handleChange}
+        value={qvalue}
+        onChange={handleqChange}
         variant="scrollable"
         scrollButtons="on"
         indicatorColor="transparent"
@@ -170,49 +174,57 @@ export default function SelfChallengeSubjectUnits({ selectedCategory }) {
           />
         ))}
       </Tabs>
-      {TabPanelData[selectedCategory].map((tab, index) => (
-        <TabPanel key={index} value={value} index={tab.index}>
-          <Divider textAlign="center" sx={{ margin: "15px 0" }}>
-            <h3>SELECT TIME PERIOD (IN MINUTES)</h3>
-          </Divider>
-          <Tabs
-            value={value}
-            onChange={handleChange}
-            variant="scrollable"
-            scrollButtons="on"
-            indicatorColor="transparent"
-            aria-label="icon label tabs example"
-            sx={{
-              "& .MuiTabs-scroller": {
-                overflow: "visible",
-              },
-            }}
-          >
-            {SelfChallengeQuestionsData[selectedCategory].map((item, index) => (
-              <Tab
-                key={index}
-                className={classes.tab}
-                label={
-                  <>
-                    <Typography
-                      variant="subtitle1"
-                      color="text.secondary"
-                      sx={{
-                        mt: 1,
-                        textTransform: "capitalize",
-                        color: "inherit",
-                      }}
-                    >
-                      {`${item.count}`}
-                    </Typography>
-                  </>
-                }
-                wrapped
-              />
-            ))}
-          </Tabs>
-        </TabPanel>
-      ))}
+      <Divider textAlign="center" sx={{ margin: "15px 0" }}>
+        <h3>SELECT TIME PERIOD (IN MINUTES)</h3>
+      </Divider>
+      <Tabs
+        value={uvalue}
+        onChange={handleuChange}
+        variant="scrollable"
+        scrollButtons="on"
+        indicatorColor="transparent"
+        aria-label="icon label tabs example"
+        sx={{
+          "& .MuiTabs-scroller": {
+            overflow: "visible",
+          },
+        }}
+      > 
+        {SelfChallengeTimeData[selectedCategory].map((item, index) => (
+          <Tab
+            key={index}
+            className={classes.tab}
+            label={
+              <>
+                <Typography
+                  variant="subtitle1"
+                  color="text.secondary"
+                  sx={{
+                    mt: 1,
+                    textTransform: "capitalize",
+                    color: "inherit",
+                  }}
+                >
+                  {`${item.count}`}
+                </Typography>
+              </>
+            }
+            wrapped
+          />
+        ))}
+      </Tabs>
+      <Link
+        href="/marketing/student/QuizZonePage"
+        style={{
+          display: "flex",
+          justifyContent: 'center',
+          alignContent: 'center',
+          padding: '10px',
+          margin: '10px'
+        }}
+      >
+        <Button>Let's start</Button>
+      </Link>
     </div>
   );
 }
