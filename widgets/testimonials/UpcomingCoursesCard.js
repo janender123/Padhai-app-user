@@ -39,7 +39,7 @@ const UpcomingCoursesCard = ({ item }) => {
           </div>
           <div className={`mt-0 text-start border-top-0`}>
             <Link href="/marketing/courses/course-single#">
-              <h3 className="text-dark mb-0 mt-2">{item.name}</h3>
+              <h3 className="text-dark mb-0 mt-2" style={{ whiteSpace: "pre-wrap" }}>{item.name}</h3>
             </Link>
           </div>
           <p className="text-start mt-3">{item.instructor}</p>

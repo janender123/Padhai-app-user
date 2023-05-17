@@ -14,10 +14,10 @@ const UpcomingClassesCard = ({ item }) => {
         <div className="p-md-4">
           <div className={`mt-0 text-start border-top-0`}>
             <Link href="/marketing/courses/course-single#">
-              <h3 className="text-dark mb-0">{item.name}</h3>
+              <h3 className="text-dark mb-0" style={{ whiteSpace: "pre-wrap" }}>{item.name}</h3>
             </Link>
           </div>
-          <p className="text-start mt-3">{item.instructor}</p>
+          <p className="text-start mt-3" style={{ whiteSpace: "pre-wrap" }}>{item.instructor}</p>
           <p className="text-start m-0 ">{item.time}</p>
         </div>
       </Card.Body>

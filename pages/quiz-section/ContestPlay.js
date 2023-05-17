@@ -4,6 +4,8 @@ import { Card, CardContent, Typography } from "@mui/material";
 import UpcomingClasses from "data/testimonials/UpcomingClasses";
 import UpcomingClassesCard from "widgets/testimonials/UpcomingClassesCard";
 import { makeStyles } from "@material-ui/core/styles";
+import LiveContests from "data/testimonials/LiveContests";
+import LiveContestsCard from "widgets/testimonials/LiveContestsCard";
 
 const useStyles = makeStyles((theme) => ({
   upcomingClassesContainer: {
@@ -47,44 +49,66 @@ const MyTabsContainer = () => {
   const renderTabContent = () => {
     switch (selectedTab) {
       case 0:
-        return <Typography variant="h6">No past contests</Typography>;
+        return (
+          <Typography
+            variant="h6"
+            className=""
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              padding: "10px",
+            }}
+          >
+            No past contests
+          </Typography>
+        );
       case 1:
         return (
-          <section name="Upcoming-classes">
+          <section name="Upcoming-classes" className="p-5">
             <Container>
-              <Card>
-                <div className={classes.upcomingClassesContainer}>
-                  <div
-                    style={{
-                      display: "flex",
-                      justifyContent: "space-between",
-                      alignItems: "center",
-                    }}
+              <div className={classes.upcomingClassesContainer}>
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                  }}
+                >
+                  <h2
+                    style={{ fontSize: "50px" }}
+                    className="text-dark text-center display-4 fw-bold"
                   >
-                    <h1
-                      style={{ fontSize: "55px" }}
-                      className="text-dark text-center display-4 fw-bold"
-                    >
-                      Upcoming Classes
-                    </h1>
-                  </div>
-                  <Grid container spacing={2}>
-                    {UpcomingClasses.slice(
-                      startClassIndex,
-                      startClassIndex + classesToShow
-                    ).map((item, index) => (
-                      <Grid item lg={3} md={6} sm={12} key={index}>
-                        <UpcomingClassesCard item={item} />
-                      </Grid>
-                    ))}
-                  </Grid>
+                    Live Contests
+                  </h2>
                 </div>
-              </Card>
+                <Grid container spacing={2}>
+                  {LiveContests.slice(
+                    startClassIndex,
+                    startClassIndex + classesToShow
+                  ).map((item, index) => (
+                    <Grid item lg={3} md={6} sm={12} key={index}>
+                      <LiveContestsCard item={item} />
+                    </Grid>
+                  ))}
+                </Grid>
+              </div>
             </Container>
           </section>
         );
       case 2:
-        return <Typography variant="h6">No upcoming contests</Typography>;
+        return (
+          <Typography
+            variant="h6"
+            className=""
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              padding: "10px",
+            }}
+          >
+            No Upcoming contests
+          </Typography>
+        );
       default:
         return null;
     }
