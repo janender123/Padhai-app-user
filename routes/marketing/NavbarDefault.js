@@ -3,6 +3,18 @@ import { v4 as uuid } from "uuid";
 const NavbarDefault = [
   {
     id: uuid(),
+    menuitem: "Study Material",
+    link: "#",
+    children: [
+      {
+        id: uuid(),
+        menuitem: "Exams and Solutions",
+        link: "/study-material/exams-and-solutions",
+      },
+    ],
+  },
+  {
+    id: uuid(),
     menuitem: "Quiz Play",
     link: "#",
     children: [

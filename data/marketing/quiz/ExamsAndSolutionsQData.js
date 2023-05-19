@@ -1,31 +1,38 @@
 // import node module libraries
 import { v4 as uuid } from "uuid";
 
-export const QuizData = [
+export const ExamsAndSolutionsQData = [
   {
     id: 1,
-    question: "React is mainly used for building ___.",
+    question: (
+      <div>
+        Probabilities of a target being hit by three players A, B and C are
+        1/5,2/5 and 5/6 respectively. If all three players given a try then what
+        would be the probability that the target being hit by not more than 2
+        players?
+      </div>
+    ),
     answerSelectionType: "single",
     interface: "button",
     answers: [
       {
         id: uuid(),
-        answer: "Database",
+        answer: "1/15",
         value: 1,
       },
       {
         id: uuid(),
-        answer: "Connectivity",
+        answer: "1/12",
         value: 2,
       },
       {
         id: uuid(),
-        answer: "User interface",
+        answer: "14/15",
         value: 3,
       },
       {
         id: uuid(),
-        answer: "Design Platform",
+        answer: "11/12",
         value: 4,
       },
     ],
@@ -149,4 +156,4 @@ export const QuizData = [
   },
 ];
 
-export default QuizData;
+export default ExamsAndSolutionsQData;
