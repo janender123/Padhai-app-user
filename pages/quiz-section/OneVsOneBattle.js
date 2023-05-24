@@ -81,7 +81,7 @@ const CardComponent = () => {
                   sx={{ marginTop: "10px" }}
                   fullWidth
                 >
-                  Let's Play
+                  Let&apos;s Play
                 </Button>
               </Link>
               <Typography variant="h6" marginTop="20px">

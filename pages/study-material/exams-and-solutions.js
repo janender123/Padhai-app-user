@@ -22,10 +22,10 @@ const HeroFormRight = () => {
       <Container className="bg-light">
         {/*  Card  */}
         {formData.map((item, index) => (
-          <Link href="/study-material/question-solution">
+          <Link  key={index} href="/study-material/question-solution">
             <Card style={{ zIndex: 1 }} className="smooth-shadow-md mt-3">
               <Card.Body className="p-6">
-                <div key={index} className="mb-4">
+                <div className="mb-4">
                   <h1 className="mb-4 lh-1 fw-bold h3">
                     Question {item.id}
                     <Chip

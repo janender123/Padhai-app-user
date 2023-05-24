@@ -24,7 +24,6 @@ const QuestionSolution = (props) => {
               }
               setclicked(1);
             };
-
             const labelStyle = {
               backgroundColor: bgColor,
               fontColor: "white",

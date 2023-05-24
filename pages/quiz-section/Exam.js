@@ -130,7 +130,10 @@ const CardComponent = () => {
                   {selectedTab === 0 && (
                     <div>
                       {TodaysExam.map((item, index) => (
-                        <Link href="/marketing/student/QuizZonePage">
+                        <Link
+                          key={index}
+                          href="/marketing/student/QuizZonePage"
+                        >
                           <div
                             className="p-md-4"
                             style={{
@@ -198,6 +201,7 @@ const CardComponent = () => {
                       {CompletedExams.map((item, index) => (
                         <div
                           className="p-md-4"
+                          key={index}
                           style={{
                             display: "flex",
                             margin: "10px",
