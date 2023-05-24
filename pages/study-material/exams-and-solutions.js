@@ -13,7 +13,7 @@ import {
   ButtonGroup,
 } from "react-bootstrap";
 
-import formData from "./formData"; // Import the data from a separate file
+import FormData from "./FormData"; // Import the data from a separate file
 import { Chip } from "@mui/material";
 
 const HeroFormRight = () => {
@@ -21,7 +21,7 @@ const HeroFormRight = () => {
     <section className="py-6">
       <Container className="bg-light">
         {/*  Card  */}
-        {formData.map((item, index) => (
+        {FormData.map((item, index) => (
           <Link  key={index} href="/study-material/question-solution">
             <Card style={{ zIndex: 1 }} className="smooth-shadow-md mt-3">
               <Card.Body className="p-6">
