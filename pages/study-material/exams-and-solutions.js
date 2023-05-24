@@ -13,7 +13,7 @@ import {
   ButtonGroup,
 } from "react-bootstrap";
 
-import FormData from "./FormData"; // Import the data from a separate file
+import FormData from "./formData"; // Import the data from a separate file
 import { Chip } from "@mui/material";
 
 const HeroFormRight = () => {
