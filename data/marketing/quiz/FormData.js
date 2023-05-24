@@ -1,14 +1,12 @@
-import React from "react";
-
 export const FormData = [
   {
     id: 1,
     question: (
       <div>
         Probabilities of a target being hit by three players A, B and C are
-        1/5,2/5 and 5/6 respectively. If all three players given a try then what
-        would be the probability that the target being hit by not more than 2
-        players?
+        1/5,2/5 and 5/6 respectively. If all the three players given a try then
+        what would be the probability that the target being hit by not more than
+        2 players?
       </div>
     ),
     optiona: "1/15",
