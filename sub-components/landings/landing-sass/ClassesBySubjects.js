@@ -27,11 +27,8 @@ const ClassesBySubjects = () => {
         <Row>
           {ClassesBySubjectsData.map((item, index) => {
             return (
-              <Col
-                xl={2}
-                md={4}
-                xs={6}
-                className="m-3 p-0"
+              <Col xl={2} lg={2} md={4} xs={6} sm={6}
+              className="p-2" 
                 key={index}
               >
                 <Card className="h-100">

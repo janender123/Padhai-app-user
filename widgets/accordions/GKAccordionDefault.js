@@ -45,8 +45,8 @@ const GKAccordionDefault = ({ accordionItems, itemClass }) => {
               display: " inline-flex",
               justifyContent: " center",
               alignItems: "center",
-              margin: '3px',
-              marginRight: '10px'
+              margin: "3px",
+              marginRight: "10px",
             }}
           >
             {children.order}
@@ -129,83 +129,79 @@ const GKAccordionDefault = ({ accordionItems, itemClass }) => {
                           className="px-0 py-1 border-0"
                         >
                           {subitem.hasButton ? (
-                            <div
-                              style={{
-                                display: "flex",
-                                justifyContent: "space-between",
-                                width: "100%",
-                              }}
-                            >
-                              <Link
-                                href="#!"
-                                className="d-flex justify-content-start align-items-center text-inherit text-decoration-none"
-                                style={{
-                                  border: "1px solid white",
-                                  padding: "12px",
-                                  borderRadius: "10px",
-                                  boxShadow: "0px -1px 7px 0px",
-                                  flexBasis: "33%",
-                                  boxSizing: "border-box",
-                                  display: "flex",
-                                  alignItems: "center",
-                                }}
-                              >
-                                <Image
-                                  src="/images/png/notes.png"
-                                  alt="Notes Icon"
-                                  width="30px"
-                                  height="30px"
-                                  style={{ marginRight: "10px" }}
-                                />
-                                <h4 style={{ margin: 0 }}>Notes</h4>
-                              </Link>
-
-                              <Link
-                                href="#!"
-                                className="d-flex justify-content-start align-items-center text-inherit text-decoration-none"
-                                style={{
-                                  border: "1px solid white",
-                                  padding: "12px",
-                                  borderRadius: "10px",
-                                  boxShadow: "0px -1px 7px 0px",
-                                  flexBasis: "33%",
-                                  boxSizing: "border-box",
-                                  display: "flex",
-                                  alignItems: "center",
-                                }}
-                              >
-                                <Image
-                                  src="/images/png/assignment.png"
-                                  alt="Assignment Icon"
-                                  width="30px"
-                                  height="30px"
-                                  style={{ marginRight: "10px" }}
-                                />
-                                <h4 style={{ margin: 0 }}>Assignments</h4>
-                              </Link>
-                              <Link
-                                href="#!"
-                                className="d-flex justify-content-start align-items-center text-inherit text-decoration-none"
-                                style={{
-                                  border: "1px solid white",
-                                  padding: "12px",
-                                  borderRadius: "10px",
-                                  boxShadow: "0px -1px 7px 0px",
-                                  flexBasis: "33%",
-                                  boxSizing: "border-box",
-                                  display: "flex",
-                                  alignItems: "center",
-                                }}
-                              >
-                                <Image
-                                  src="/images/png/test.png"
-                                  alt="Test Icon"
-                                  width="30px"
-                                  height="30px"
-                                  style={{ marginRight: "10px" }}
-                                />
-                                <h4>Test</h4>
-                              </Link>
+                            <div className="row">
+                              <div className="col-12 col-md-4 ">
+                                <Link
+                                  href="#!"
+                                  className="d-flex justify-content-start align-items-center text-inherit text-decoration-none"
+                                  style={{
+                                    border: "1px solid white",
+                                    margin: "3px 0",
+                                    boxShadow: "0px -1px 7px 0px",
+                                    padding: "12px",
+                                    borderRadius: "10px",
+                                    width: "100%",
+                                    margin: "3px 0",
+                                  }}
+                                >
+                                  <Image
+                                    src="/images/png/notes.png"
+                                    alt="Notes Icon"
+                                    width="30px"
+                                    height="30px"
+                                    style={{ marginRight: "10px" }}
+                                  />
+                                  <h4 style={{ margin: 0 }}>Notes</h4>
+                                </Link>
+                              </div>
+                              <div className="col-12 col-md-4 ">
+                                <Link
+                                  href="#!"
+                                  className="d-flex justify-content-start align-items-center text-inherit text-decoration-none"
+                                  style={{
+                                    border: "1px solid white",
+                                    margin: "3px 0",
+                                    boxShadow: "0px -1px 7px 0px",
+                                    padding: "12px",
+                                    borderRadius: "10px",
+                                    width: "100%",
+                                    margin: "3px 0",
+                                  }}
+                                >
+                                  <Image
+                                    src="/images/png/assignment.png"
+                                    alt="Assignment Icon"
+                                    width="30px"
+                                    height="30px"
+                                    style={{ marginRight: "10px" }}
+                                  />
+                                  <h4 style={{ margin: 0 }}>Assignments</h4>
+                                </Link>
+                              </div>
+                              <div className="col-12 col-md-4">
+                                <Link
+                                  href="#!"
+                                  className="d-flex justify-content-start align-items-center text-inherit text-decoration-none"
+                                  style={{
+                                    border: "1px solid white",
+                                    margin: "3px 0",
+                                    boxShadow: "0px -1px 7px 0px",
+                                    padding: "12px",
+                                    borderRadius: "10px",
+                                    width: "100%",
+                                    margin: "3px 0",
+                                  }}
+                                >
+                                  <Image
+                                    src="/images/png/test.png"
+                                    alt="Test Icon"
+                                    width="30px"
+                                    height="30px"
+                                    style={{ marginRight: "10px" }}
+                                  />
+                                  <h4>Test</h4>
+                                </Link>
+                              </div>
                             </div>
                           ) : (
                             <Link
@@ -217,6 +213,7 @@ const GKAccordionDefault = ({ accordionItems, itemClass }) => {
                                 boxShadow: "0px -1px 7px 0px",
                                 padding: "12px",
                                 borderRadius: "10px",
+                                width: "100%",
                               }}
                             >
                               <div className="text-truncate ">

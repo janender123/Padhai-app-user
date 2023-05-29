@@ -9,7 +9,7 @@ import {
   TextField,
 } from "@mui/material";
 import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
-import { Button } from "@mui/material";
+import { Button } from "react-bootstrap";
 import ExploreMegaMenuClass, {
   ExploreMegaMenuBoards,
   ExploreMegaMenuExams,
@@ -96,8 +96,8 @@ const DialogBoxForCourse = () => {
           fontWeight: "500",
           fontSize: "1em",
           textTransform: "capitalize",
-          border: "1px solid grey",
-          padding: "5px",
+          marginTop: '-4px',
+          marginBottom: '-4px'
         }}
       >
         {selectedExamText}
@@ -172,7 +172,7 @@ const DialogBoxForCourse = () => {
 
   return (
     <Fragment>
-      <Button onClick={handleExploreClick} id="explore-button">
+      <Button onClick={handleExploreClick} variant="outline-primary" id="explore-button">
         {exploreButtonText}
       </Button>
 
@@ -205,16 +205,15 @@ const DialogBoxForCourse = () => {
                     <MenuItem
                       key={`${index}-${subindex}`}
                       style={{
-                        width: "400px",
                         margin: "10px",
                         border: "1px solid grey",
-                        borderRadius: "10px",
+                        borderRadius: "25px",
                       }}
                     >
                       <Image
                         src={subitem.image}
                         alt=""
-                        height="40px"
+                        height="inherit"
                         width="50px"
                         style={{ marginRight: "10px" }}
                       />
@@ -226,8 +225,7 @@ const DialogBoxForCourse = () => {
           ))}
           <Button
             startIcon={<AddIcon />}
-            variant="contained"
-            style={{ margin: "10px", marginLeft: "10px" , width: '400px'}}
+            style={{ margin: "10px", marginLeft: "10px", width: "400px",borderRadius: "25px", }}
             onClick={handleAddNewGoal}
           >
             Add another Goal

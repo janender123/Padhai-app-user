@@ -6,7 +6,7 @@ import Accordion from "@material-ui/core/Accordion";
 import AccordionDetails from "@material-ui/core/AccordionDetails";
 import AccordionSummary from "@material-ui/core/AccordionSummary";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-import {  Divider, Typography } from "@mui/material";
+import { Divider, Typography } from "@mui/material";
 import SubjectUnitsData from "data/quiz/SubjectUnitsData";
 import TabPanelData from "data/quiz/TabPanelData";
 import { Cursor } from "react-simple-typewriter";
@@ -124,7 +124,8 @@ export default function QuizZoneSubjectUnits({ selectedCategory }) {
   const handleUnitClick = (index, unlockLength) => {
     if (index < unlockLength) {
       window.location.href = "/marketing/student/QuizZonePage";
-    } else {alert('Please complete unlock level first')
+    } else {
+      alert("Please complete unlock level first");
     }
   };
   return (
@@ -143,6 +144,9 @@ export default function QuizZoneSubjectUnits({ selectedCategory }) {
           "& .MuiTabs-scroller": {
             overflow: "visible",
           },
+          width: "100%", // Set the width to 100% for small and extra-small screens
+          maxWidth: "500px", // Define a maximum width for larger screens
+          margin: "0 auto", // Center the tabs horizontally
         }}
       >
         {SubjectUnitsData[selectedCategory].map((item, index) => (

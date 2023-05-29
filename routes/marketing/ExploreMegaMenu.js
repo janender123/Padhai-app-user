@@ -99,7 +99,7 @@ const ExploreMegaMenuStream = [
       {
         id: uuid(),
         subtitle: "Commerce",
-        image: "/images/stream-icons/payment-method.png",
+        image: "/images/stream-icons/economics.png",
         link: "#",
       },
     ],

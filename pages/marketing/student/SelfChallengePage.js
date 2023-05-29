@@ -101,7 +101,7 @@ const SelfChallengePage = () => {
     <Container className="py-8 py-lg-8 bg-light">
       <Card>
         <Grid container spacing={2}>
-          <Grid item xs={3.3} m={2}>
+          <Grid item xs={12} sm={12} md={12} lg={3} xl={3} m={3}>
             <Categories
               selectedCategory={selectedCategory}
               handleCategorySelect={handleCategorySelect}
@@ -109,7 +109,7 @@ const SelfChallengePage = () => {
               handleUnitSelect={handleUnitSelect}
             />
           </Grid>
-          <Grid item xs={8} m={2}>
+          <Grid item sm={12} md={12} xs={12} lg={8}  xl={8} m={2}>
             <SelfChallengeQuestionAndTime selectedCategory={selectedCategory} />
           </Grid>
         </Grid>

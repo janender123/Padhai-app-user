@@ -16,7 +16,7 @@ import {
   DialogActions,
 } from "@mui/material";
 import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
-import { Button } from "@mui/material";
+import { Button } from "react-bootstrap";
 import ExploreMegaMenuClass, {
   ExploreMegaMenuBoards,
   ExploreMegaMenuExams,
@@ -24,7 +24,6 @@ import ExploreMegaMenuClass, {
   ExploreMegaMenuStream,
 } from "routes/marketing/ExploreMegaMenu";
 import { Close } from "@material-ui/icons";
-
 
 const CourseReadyDialog = ({
   dialogOpenCourseReady,
@@ -77,7 +76,14 @@ const CourseReadyDialog = ({
                 {ExploreMegaMenuClass[0].children.map((subitem, subindex) => {
                   if (subindex === selectedClass) {
                     return (
-                      <p key={subindex} style={{ marginTop: "10px" }}>
+                      <p
+                        key={subindex}
+                        style={{
+                          marginTop: "10px",
+                          width: "100%",
+                          borderRadius: "25px",
+                        }}
+                      >
                         Class
                         <h3
                           key={subindex}
@@ -192,20 +198,24 @@ const CourseReadyDialog = ({
             </Col>
             <Col lg={6}>
               <Button
-                fullWidth
-                variant="contained"
                 onClick={handleBackClickCourseReady}
-                style={{ marginTop: "10px" }}
+                style={{
+                  marginTop: "10px",
+                  width: "100%",
+                  borderRadius: "25px",
+                }}
               >
                 Start Over
               </Button>
             </Col>
             <Col lg={6}>
               <Button
-                fullWidth
-                variant="contained"
                 onClick={handleSubmitCourseReady}
-                style={{ marginTop: "10px" }}
+                style={{
+                  marginTop: "10px",
+                  width: "100%",
+                  borderRadius: "25px",
+                }}
               >
                 Join this course
               </Button>
@@ -216,7 +226,5 @@ const CourseReadyDialog = ({
     </Dialog>
   );
 };
-
-
 
 export default CourseReadyDialog;

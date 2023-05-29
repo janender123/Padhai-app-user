@@ -16,7 +16,7 @@ import {
   DialogActions,
 } from "@mui/material";
 import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
-import { Button } from "@mui/material";
+import { Button } from "react-bootstrap";
 import ExploreMegaMenuClass, {
   ExploreMegaMenuBoards,
   ExploreMegaMenuExams,
@@ -125,9 +125,8 @@ const ChooseBoardDialog = ({
                 <Col lg={6}>
                   <Button
                     fullWidth
-                    variant="contained"
                     onClick={handleBackClickBoard}
-                    style={{ marginTop: "10px" }}
+                     style={{ marginTop: "10px", width: "100%" , borderRadius: "25px",}}
                   >
                     Back
                   </Button>
@@ -135,9 +134,8 @@ const ChooseBoardDialog = ({
                 <Col lg={6}>
                   <Button
                     fullWidth
-                    variant="contained"
                     onClick={handleNextClickBoard}
-                    style={{ marginTop: "10px" }}
+                     style={{ marginTop: "10px", width: "100%" , borderRadius: "25px",}}
                   >
                     Next
                   </Button>

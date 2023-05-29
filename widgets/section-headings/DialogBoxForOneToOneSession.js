@@ -113,7 +113,9 @@ const CalendarDialog = () => {
   return (
     <>
       <LocalizationProvider dateAdapter={AdapterDayjs}>
-        <Button onClick={handleOpenDialog}>Next</Button>
+        <Button onClick={handleOpenDialog} className="mt-4">
+          Next
+        </Button>
         <Dialog
           open={dialogOpen}
           onClose={handleCloseDialog}

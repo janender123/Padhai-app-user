@@ -174,7 +174,14 @@ const CourseSingle = () => {
       <section className="pb-10">
         <Container>
           <Row>
-            <Col lg={8} md={12} sm={12} className="mt-n8 mb-4 mb-lg-0">
+            <Col
+              name="contents"
+              lg={8}
+              md={12}
+              sm={12}
+              className="order-md-1 order-sm-2 mt-n8 mb-4 mb-lg-0"
+              order={{ xs: 2, sm: 2, md: 1 }}
+            >
               <Tab.Container defaultActiveKey="contents">
                 <Card>
                   <Nav className="nav-lb-tab">
@@ -203,24 +210,19 @@ const CourseSingle = () => {
                         {/* Description */}
                         <DescriptionTab />
                       </Tab.Pane>
-                      <Tab.Pane eventKey="reviews" className="pb-4 p-4">
-                        {/* Reviews */}
-                        <ReviewsTab />
-                      </Tab.Pane>
-                      <Tab.Pane eventKey="transcript" className="pb-4 p-4">
-                        {/* Transcript */}
-                        <TranscriptTab />
-                      </Tab.Pane>
-                      <Tab.Pane eventKey="faq" className="pb-4 p-4">
-                        {/* FAQ */}
-                        <FAQTab />
-                      </Tab.Pane>
                     </Tab.Content>
                   </Card.Body>
                 </Card>
               </Tab.Container>
             </Col>
-            <Col lg={4} md={12} sm={12} className="mt-lg-n8">
+            <Col
+              name="subscription section"
+              lg={4}
+              md={12}
+              sm={12}
+              className="order-md-2 order-sm-1  mt-lg-n8"
+              order={{ xs: 1, sm: 1, md: 2 }}
+            >
               <Card sx={{ display: "flex" }}>
                 <CardMedia
                   component="img"

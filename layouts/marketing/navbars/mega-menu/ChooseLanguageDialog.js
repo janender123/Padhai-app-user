@@ -16,7 +16,7 @@ import {
   DialogActions,
 } from "@mui/material";
 import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
-import { Button } from "@mui/material";
+import { Button } from "react-bootstrap";
 import ExploreMegaMenuClass, {
   ExploreMegaMenuBoards,
   ExploreMegaMenuExams,
@@ -113,9 +113,8 @@ const ChooseLanguageDialog = ({
                 <Col lg={6}>
                   <Button
                     fullWidth
-                    variant="contained"
                     onClick={handleBackClickLanguage}
-                    style={{ marginTop: "10px" }}
+                    style={{ marginTop: "10px", width: "100%" , borderRadius: "25px",}}
                   >
                     Back
                   </Button>
@@ -123,9 +122,8 @@ const ChooseLanguageDialog = ({
                 <Col lg={6}>
                   <Button
                     fullWidth
-                    variant="contained"
                     onClick={handleNextClickLanguage}
-                    style={{ marginTop: "10px" }}
+                    style={{ marginTop: "10px", width: "100%" , borderRadius: "25px",}}
                   >
                     Next
                   </Button>

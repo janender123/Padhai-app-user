@@ -16,7 +16,7 @@ import {
   DialogActions,
 } from "@mui/material";
 import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
-import { Button } from "@mui/material";
+import { Button } from "react-bootstrap";
 import ExploreMegaMenuClass, {
   ExploreMegaMenuBoards,
   ExploreMegaMenuExams,
@@ -53,7 +53,7 @@ const ChooseClassDialog = ({
               <Row key={index} style={{ width: "380px" }}>
                 {item.children.map((subitem, subindex) => {
                   return (
-                    <Col lg={4} xs={12} key={index} style={{ padding: "6px" }}>
+                    <Col xl={4} lg={4} md={4} xs={6} sm={6} style={{padding:'7px'}}>
                       <div
                         className="d-flex text-center"
                         style={{
@@ -84,20 +84,25 @@ const ChooseClassDialog = ({
                     </Col>
                   );
                 })}
-                <Col lg={6}>
-                  <Button
-                    fullWidth
-                    variant="contained"
-                    onClick={handleNextClickClass}
+                <Col lg={12} md={12} sm={12}>
+                  <div
                     style={{
-                      marginTop: "20px",
-                      marginLeft: "50%",
-                      borderRadius: "10px",
-                      fontWeight: "strong",
+                      display: "flex",
+                      justifyContent: "center",
+                      marginTop: "10px",
                     }}
                   >
-                    Next
-                  </Button>
+                    <Button
+                      onClick={handleNextClickClass}
+                      style={{
+                        padding: "10px 30px",
+                        borderRadius: "25px",
+                        fontWeight: "strong",
+                      }}
+                    >
+                      Next
+                    </Button>
+                  </div>
                 </Col>
               </Row>
             </DialogContent>
@@ -108,5 +113,4 @@ const ChooseClassDialog = ({
   );
 };
 
-
-export default ChooseClassDialog
+export default ChooseClassDialog;

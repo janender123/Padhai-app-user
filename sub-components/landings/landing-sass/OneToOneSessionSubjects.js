@@ -43,7 +43,7 @@ const OneToOneSessionSubjects = () => {
               : null;
 
             return (
-              <Col xl={2} md={4} xs={6} className="m-3 p-0" key={index}>
+              <Col xl={2} lg={2} md={4} xs={6} sm={6} className="p-2" key={index}>
                 <Card
                   className="h-100"
                   style={selectedCardStyles}
@@ -61,7 +61,7 @@ const OneToOneSessionSubjects = () => {
         </Row>
         <Row>
           {/* button  */}
-          <DialogBoxForOneToOneSession />
+          <DialogBoxForOneToOneSession  />
         </Row>
       </Container>
     </section>

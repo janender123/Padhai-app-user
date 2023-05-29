@@ -1,14 +1,14 @@
 // import node module libraries
-import { useState } from 'react';
-import { Col, Row, Container, Image, Button } from 'react-bootstrap';
-import Link from 'next/link';
+import { useState } from "react";
+import { Col, Row, Container, Image, Button } from "react-bootstrap";
+import Link from "next/link";
 
 // import popup youtube video
-import ModalVideo from 'react-modal-video';
+import ModalVideo from "react-modal-video";
 
 const HeroAcademy = () => {
   const [isOpen, setOpen] = useState(false);
-	const [YouTubeURL] = useState('JRzWRZahOVU');
+  const [YouTubeURL] = useState("JRzWRZahOVU");
 
   return (
     <section className="py-lg-16 py-8 bg-white">
@@ -56,39 +56,9 @@ const HeroAcademy = () => {
           <Col lg={6} sm={6} className="d-flex justify-content-center">
             <div className="position-relative">
               <Image
-                src="/images/background/acedamy-img/bg-thumb.svg"
+                src="/images/brand/logo/padhae-landing-page.svg"
                 alt=""
                 className=""
-              />
-              <Image
-                src="/images/background/acedamy-img/girl-image.png"
-                alt=""
-                className="position-absolute end-0 bottom-0"
-              />
-              <Image
-                src="/images/background/acedamy-img/frame-1.svg"
-                alt=""
-                className="position-absolute top-0 ms-lg-n10 ms-n19"
-              />
-              <Image
-                src="/images/background/acedamy-img/frame-2.svg"
-                alt=""
-                className="position-absolute bottom-0 start-0 ms-lg-n14 ms-n6 mb-n7"
-              />
-              <Image
-                src="/images/background/acedamy-img/target.svg"
-                alt=""
-                className="position-absolute bottom-0 mb-10 ms-n10 ms-lg-n1 "
-              />
-              <Image
-                src="/images/background/acedamy-img/sound.svg"
-                alt=""
-                className="position-absolute top-0  start-0 mt-18 ms-lg-n19 ms-n8"
-              />
-              <Image
-                src="/images/background/acedamy-img/trophy.svg"
-                alt=""
-                className="position-absolute top-0  start-0 ms-lg-n14 ms-n5"
               />
             </div>
           </Col>
@@ -96,6 +66,6 @@ const HeroAcademy = () => {
       </Container>
     </section>
   );
-}
+};
 
-export default HeroAcademy
+export default HeroAcademy;

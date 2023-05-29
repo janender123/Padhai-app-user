@@ -6,6 +6,55 @@ import { Row, Col, Image, Container, ListGroup } from "react-bootstrap";
 import Icon from "@mdi/react";
 import { mdiFacebook, mdiTwitter, mdiInstagram } from "@mdi/js";
 
+const ImpQuestionData = [
+  { id: 1, subject: "Class 11 Biology" },
+  { id: 2, subject: "Class 11 Maths" },
+  { id: 3, subject: "Class 11 Physics" },
+  { id: 4, subject: "Class 11 Chemistry" },
+  { id: 5, subject: "Class 11 Biology" },
+  { id: 6, subject: "Class 11 Maths" },
+  { id: 7, subject: "Class 11 Physics" },
+  { id: 8, subject: "Class 11 Chemistry" },
+  { id: 9, subject: "NCERT 11th Physics II" },
+];
+
+const ImpBookQuestionData = [
+  { id: 1, subject: "NCERT 11th Biology" },
+  { id: 2, subject: "NCERT 11th Physics I" },
+  { id: 3, subject: "NCERT 12th Biology" },
+  { id: 4, subject: "NCERT 12th Physics I" },
+  { id: 5, subject: "NCERT 12th Maths II" },
+  { id: 6, subject: "NEET 2020" },
+  { id: 7, subject: "NCERT 11th Chemistry I" },
+  { id: 8, subject: "NCERT 11th Physics II" },
+  { id: 9, subject: "NCERT 11th Physics II" },
+  { id: 10, subject: "NCERT 12th Chemistry I" },
+  { id: 11, subject: "NCERT 11th Physics II" },
+  { id: 12, subject: "NCERT 12th Chemistry I" },
+];
+
+const ImpQuestionsAsked = [
+  { id: 1, subject: "Class 11 Biology" },
+  { id: 2, subject: "Class 11 Maths" },
+  { id: 3, subject: "Class 11 Physics" },
+  { id: 4, subject: "Class 11 Chemistry" },
+  { id: 5, subject: "Class 11 Biology" },
+  { id: 6, subject: "Class 11 Maths" },
+  { id: 7, subject: "Class 11 Physics" },
+  { id: 8, subject: "Class 11 Chemistry" },
+];
+
+const AboutSection = [
+  { id: 1, subject: "About Us" },
+  { id: 2, subject: "Become a Tutor" },
+  { id: 3, subject: "Padhae Instant Ask Button" },
+  { id: 4, subject: "Instant Tutoring" },
+  { id: 5, subject: "High Dosage Tutoring" },
+  { id: 6, subject: "Careers" },
+  { id: 7, subject: "Contact Us" },
+  { id: 8, subject: "Blog" },
+];
+
 const FooterWithLinks = () => {
   return (
     <footer className="pt-lg-10 pt-5 footer bg-white">
@@ -13,252 +62,69 @@ const FooterWithLinks = () => {
         style={{
           backgroundColor: "#3c65c4",
           maxWidth: "100%",
-          padding: "0 180px",
+          padding: "0 20%",
         }}
       >
         <Row>
           <div className="mb-4 mt-10">
             {/* list */}
-            <h2 className="fw-bold text-white text-center mb-3">
+            <h2 className="fw-bold text-white text-start text-md-center mb-3">
               Important questions from NCERT
             </h2>
             <ListGroup as="ul" bsPrefix="list-unstyled row">
-              <ListGroup.Item
-                as="li"
-                bsPrefix="col-lg-4 col-md-6 col-sm-12 mb-2"
-              >
-                <Link href="#" className="text-white nav-link">
-                  Class 11 Biology
-                </Link>
-              </ListGroup.Item>
-              <ListGroup.Item
-                as="li"
-                bsPrefix="col-lg-4 col-md-6 col-sm-12 mb-2"
-              >
-                <Link href="#" className="text-white nav-link">
-                  Class 11 Maths
-                </Link>
-              </ListGroup.Item>
-              <ListGroup.Item
-                as="li"
-                bsPrefix="col-lg-4 col-md-6 col-sm-12 mb-2"
-              >
-                <Link href="#" className="text-white nav-link">
-                  Class 11 Physics
-                </Link>
-              </ListGroup.Item>
-              <ListGroup.Item
-                as="li"
-                bsPrefix="col-lg-4 col-md-6 col-sm-12 mb-2"
-              >
-                <Link href="#" className="text-white nav-link">
-                  Class 11 Chemistry
-                </Link>
-              </ListGroup.Item>
-              <ListGroup.Item
-                as="li"
-                bsPrefix="col-lg-4 col-md-6 col-sm-12 mb-2"
-              >
-                <Link href="#" className="text-white nav-link">
-                  Class 11 Biology
-                </Link>
-              </ListGroup.Item>
-              <ListGroup.Item
-                as="li"
-                bsPrefix="col-lg-4 col-md-6 col-sm-12 mb-2"
-              >
-                <Link href="#" className="text-white nav-link">
-                  Class 11 Maths
-                </Link>
-              </ListGroup.Item>
-              <ListGroup.Item
-                as="li"
-                bsPrefix="col-lg-4 col-md-6 col-sm-12 mb-2"
-              >
-                <Link href="#" className="text-white nav-link">
-                  Class 11 Physics
-                </Link>
-              </ListGroup.Item>
-              <ListGroup.Item
-                as="li"
-                bsPrefix="col-lg-4 col-md-6 col-sm-12 mb-2"
-              >
-                <Link href="#" className="text-white nav-link">
-                  Class 11 Chemistry
-                </Link>
-              </ListGroup.Item>
+              {ImpQuestionData.map((item) => (
+                <ListGroup.Item
+                  key={item.id}
+                  as="li"
+                  bsPrefix="col-lg-4 col-md-6 col-sm-6 col-6 mb-2"
+                >
+                  <Link href="#" className="text-white  nav-link">
+                    {item.subject}
+                  </Link>
+                </ListGroup.Item>
+              ))}
             </ListGroup>
           </div>
         </Row>
         <Row>
           <div className="mb-4">
             {/* list */}
-            <h2 className="fw-bold text-white text-center mb-3">
+            <h2 className="fw-bold text-white text-start text-md-center mb-3">
               Questions from important books and exams
             </h2>
             <ListGroup as="ul" bsPrefix="list-unstyled row">
-              <ListGroup.Item
-                as="li"
-                bsPrefix="col-lg-4 col-md-6 col-sm-12 mb-2"
-              >
-                <Link href="#" className="text-white nav-link">
-                  NCERT 11th Biology
-                </Link>
-              </ListGroup.Item>
-              <ListGroup.Item
-                as="li"
-                bsPrefix="col-lg-4 col-md-6 col-sm-12 mb-2"
-              >
-                <Link href="#" className="text-white nav-link">
-                  NCERT 11th Physics I
-                </Link>
-              </ListGroup.Item>
-              <ListGroup.Item
-                as="li"
-                bsPrefix="col-lg-4 col-md-6 col-sm-12 mb-2"
-              >
-                <Link href="#" className="text-white nav-link">
-                  NCERT 12th Biology
-                </Link>
-              </ListGroup.Item>
-              <ListGroup.Item
-                as="li"
-                bsPrefix="col-lg-4 col-md-6 col-sm-12 mb-2"
-              >
-                <Link href="#" className="text-white nav-link">
-                  NCERT 12th Physics I
-                </Link>
-              </ListGroup.Item>
-              <ListGroup.Item
-                as="li"
-                bsPrefix="col-lg-4 col-md-6 col-sm-12 mb-2"
-              >
-                <Link href="#" className="text-white nav-link">
-                  NCERT 12th Maths II
-                </Link>
-              </ListGroup.Item>
-              <ListGroup.Item
-                as="li"
-                bsPrefix="col-lg-4 col-md-6 col-sm-12 mb-2"
-              >
-                <Link href="#" className="text-white nav-link">
-                  NEET 2020
-                </Link>
-              </ListGroup.Item>
-              <ListGroup.Item
-                as="li"
-                bsPrefix="col-lg-4 col-md-6 col-sm-12 mb-2"
-              >
-                <Link href="#" className="text-white nav-link">
-                  NCERT 11th Chemistry I
-                </Link>
-              </ListGroup.Item>
-              <ListGroup.Item
-                as="li"
-                bsPrefix="col-lg-4 col-md-6 col-sm-12 mb-2"
-              >
-                <Link href="#" className="text-white nav-link">
-                  NCERT 11th Physics II
-                </Link>
-              </ListGroup.Item>
-              <ListGroup.Item
-                as="li"
-                bsPrefix="col-lg-4 col-md-6 col-sm-12 mb-2"
-              >
-                <Link href="#" className="text-white nav-link">
-                  NCERT 11th Physics II
-                </Link>
-              </ListGroup.Item>
-              <ListGroup.Item
-                as="li"
-                bsPrefix="col-lg-4 col-md-6 col-sm-12 mb-2"
-              >
-                <Link href="#" className="text-white nav-link">
-                  NCERT 12th Chemistry I
-                </Link>
-              </ListGroup.Item>
-              <ListGroup.Item
-                as="li"
-                bsPrefix="col-lg-4 col-md-6 col-sm-12 mb-2"
-              >
-                <Link href="#" className="text-white nav-link">
-                  NCERT 12th Physics II
-                </Link>
-              </ListGroup.Item>
+              {ImpBookQuestionData.map((item) => (
+                <ListGroup.Item
+                  key={item.id}
+                  as="li"
+                  bsPrefix="col-lg-4 col-md-6 col-sm-6 col-6 mb-2"
+                >
+                  <Link href="#" className="text-white nav-link">
+                    {item.subject}
+                  </Link>
+                </ListGroup.Item>
+              ))}
             </ListGroup>
           </div>
         </Row>
         <Row>
           <div className="mb-4">
             {/* list */}
-            <h2 className="fw-bold text-white text-center mb-3">
-              Important questions asked by Filo students
+            <h2 className="fw-bold text-white text-start text-md-center mb-3">
+              Important questions asked by Padhae students
             </h2>
             <ListGroup as="ul" bsPrefix="list-unstyled row">
-              <ListGroup.Item
-                as="li"
-                bsPrefix="col-lg-4 col-md-6 col-sm-12 mb-2"
-              >
-                <Link href="#" className="text-white nav-link">
-                  Class 11 Biology
-                </Link>
-              </ListGroup.Item>
-              <ListGroup.Item
-                as="li"
-                bsPrefix="col-lg-4 col-md-6 col-sm-12 mb-2"
-              >
-                <Link href="#" className="text-white nav-link">
-                  Class 11 Maths
-                </Link>
-              </ListGroup.Item>
-              <ListGroup.Item
-                as="li"
-                bsPrefix="col-lg-4 col-md-6 col-sm-12 mb-2"
-              >
-                <Link href="#" className="text-white nav-link">
-                  Class 11 Physics
-                </Link>
-              </ListGroup.Item>
-              <ListGroup.Item
-                as="li"
-                bsPrefix="col-lg-4 col-md-6 col-sm-12 mb-2"
-              >
-                <Link href="#" className="text-white nav-link">
-                  Class 11 Chemistry
-                </Link>
-              </ListGroup.Item>
-              <ListGroup.Item
-                as="li"
-                bsPrefix="col-lg-4 col-md-6 col-sm-12 mb-2"
-              >
-                <Link href="#" className="text-white nav-link">
-                  Class 11 Biology
-                </Link>
-              </ListGroup.Item>
-              <ListGroup.Item
-                as="li"
-                bsPrefix="col-lg-4 col-md-6 col-sm-12 mb-2"
-              >
-                <Link href="#" className="text-white nav-link">
-                  Class 11 Maths
-                </Link>
-              </ListGroup.Item>
-              <ListGroup.Item
-                as="li"
-                bsPrefix="col-lg-4 col-md-6 col-sm-12 mb-2"
-              >
-                <Link href="#" className="text-white nav-link">
-                  Class 11 Physics
-                </Link>
-              </ListGroup.Item>
-              <ListGroup.Item
-                as="li"
-                bsPrefix="col-lg-4 col-md-6 col-sm-12 mb-2"
-              >
-                <Link href="#" className="text-white nav-link">
-                  Class 11 Chemistry
-                </Link>
-              </ListGroup.Item>
+              {ImpQuestionsAsked.map((item) => (
+                <ListGroup.Item
+                  key={item.id}
+                  as="li"
+                  bsPrefix="col-lg-4 col-md-6 col-sm-6 col-6 mb-2"
+                >
+                  <Link href="#" className="text-white nav-link">
+                    {item.subject}
+                  </Link>
+                </ListGroup.Item>
+              ))}
             </ListGroup>
           </div>
         </Row>
@@ -297,86 +163,16 @@ const FooterWithLinks = () => {
           </Col>
           <Col lg={6} md={6} sm={12}>
             <ListGroup as="ul" bsPrefix="list-unstyled row">
-              <ListGroup.Item
-                as="li"
-                bsPrefix="col-lg-6 col-md-6 col-sm-12 mb-2"
-              >
-                <Link href="#" className="text-white nav-link">
-                  About Us
-                </Link>
-              </ListGroup.Item>
-              <ListGroup.Item
-                as="li"
-                bsPrefix="col-lg-6 col-md-6 col-sm-12 mb-2"
-              >
-                <Link href="#" className="text-white nav-link">
-                  Become a Tutor
-                </Link>
-              </ListGroup.Item>
-              <ListGroup.Item
-                as="li"
-                bsPrefix="col-lg-6 col-md-6 col-sm-12 mb-2"
-              >
-                <Link href="#" className="text-white nav-link">
-                  Padhae Instant Ask Button
-                </Link>
-              </ListGroup.Item>
-              <ListGroup.Item
-                as="li"
-                bsPrefix="col-lg-6 col-md-6 col-sm-12 mb-2"
-              >
-                <Link href="#" className="text-white nav-link">
-                  Instant Tutoring
-                </Link>
-              </ListGroup.Item>
-              <ListGroup.Item
-                as="li"
-                bsPrefix="col-lg-6 col-md-6 col-sm-12 mb-2"
-              >
-                <Link href="#" className="text-white nav-link">
-                  High Dosage Tutoring
-                </Link>
-              </ListGroup.Item>
-              <ListGroup.Item
-                as="li"
-                bsPrefix="col-lg-6 col-md-6 col-sm-12 mb-2"
-              >
-                <Link href="#" className="text-white nav-link">
-                  Careers
-                </Link>
-              </ListGroup.Item>
-              <ListGroup.Item
-                as="li"
-                bsPrefix="col-lg-6 col-md-6 col-sm-12 mb-2"
-              >
-                <Link href="#" className="text-white nav-link">
-                  Contact Us
-                </Link>
-              </ListGroup.Item>
-              <ListGroup.Item
-                as="li"
-                bsPrefix="col-lg-6 col-md-6 col-sm-12 mb-2"
-              >
-                <Link href="#" className="text-white nav-link">
-                  Blog
-                </Link>
-              </ListGroup.Item>
-              <ListGroup.Item
-                as="li"
-                bsPrefix="col-lg-6 col-md-6 col-sm-12 mb-2"
-              >
-                <Link href="#" className="text-white nav-link">
-                  Privacy Policy
-                </Link>
-              </ListGroup.Item>
-              <ListGroup.Item
-                as="li"
-                bsPrefix="col-lg-6 col-md-6 col-sm-12 mb-2"
-              >
-                <Link href="#" className="text-white nav-link">
-                  Terms and Conditions
-                </Link>
-              </ListGroup.Item>
+              {AboutSection.map((item) => (
+                <ListGroup.Item
+                  as="li"
+                  bsPrefix="col-lg-4 col-md-6 col-sm-6 col-6 mb-2"
+                >
+                  <Link href="#" className="text-white nav-link">
+                    {item.subject}
+                  </Link>
+                </ListGroup.Item>
+              ))}
             </ListGroup>
           </Col>
         </Row>

@@ -5,6 +5,7 @@ import { Col, Row, Container, Button, Image } from "react-bootstrap";
 // import widget/custom components
 import { CourseSlider, FeaturesList, HeroHeader } from "widgets";
 import { StatTopSVGIcon } from "widgets";
+import { useMediaQuery } from "@material-ui/core";
 
 // import required data files
 import { GoalCategoriesData } from "data/marketing/jobs/GoalCategoriesData";
@@ -73,6 +74,7 @@ const Home = () => {
   const classesToShow = 4;
   const LiveClassesToShow = 4;
   const CoursesToShow = 4;
+  const isSmallScreen = useMediaQuery("(max-width:600px)");
 
   const handleLeftArrowClickClass = () => {
     if (startClassIndex > 0) {
@@ -114,311 +116,314 @@ const Home = () => {
   });
   return (
     <Fragment>
-      {/*  Page Content  */}
-      <section name="banner">
-        <HeroTyped />
-      </section>
-      <section name="Features" className="py-3 py-lg-3 bg-white">
-        <Container>
-          <div className="py-5 py-lg-0 mb-10">
-            <h1
-              style={{ fontSize: "55px" }}
-              className="text-dark text-center display-4 fw-bold"
-            >
-              Why
-              <span style={{ color: "#3c65c4" }}> choose us ?</span>
-            </h1>
-          </div>
-          <Row>
-            {CourseFeatures.slice(0, 4).map((item, index) => (
-              <Col lg={3} md={6} sm={12} key={index}>
-                <FeaturesCard item={item} />
-              </Col>
-            ))}
-          </Row>
-        </Container>
-      </section>
-      <section name="course-curriculum" className="py-8 py-lg-8 bg-light">
-        <Container>
-          <CourseCurriculum />
-        </Container>
-      </section>
-      <section name="Upcoming-classes" className="py-8 py-lg-8 bg-light">
-        <Container>
-          <div className={classes.upcomingClassesContainer}>
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "space-between",
-                alignItems: "center",
-              }}
-            >
+      <div style={{ padding: isSmallScreen ? "10px" : "" }}>
+        {/*  Page Content  */}
+        <section name="banner">
+          <HeroTyped />
+        </section>
+        <section name="Features" className="py-3 py-lg-3 bg-white">
+          <Container>
+            <div className="py-5 py-lg-0 mb-10">
               <h1
                 style={{ fontSize: "55px" }}
                 className="text-dark text-center display-4 fw-bold"
               >
-                Upcoming Classes
+                Why
+                <span style={{ color: "#3c65c4" }}> choose us ?</span>
               </h1>
-              <div style={{ display: "flex", alignItems: "center" }}>
-                <IconButton
-                  className={`${classes.arrowButton} ${classes.arrowLeft}`}
-                  onClick={handleLeftArrowClickClass}
-                  style={{
-                    backgroundColor: "white",
-                    border: "1px solid grey",
-                    borderRadius: "4px",
-                    marginRight: "10px",
-                    opacity: startClassIndex == 0 ? 0.5 : 1,
-                  }}
-                >
-                  <KeyboardArrowLeft />
-                </IconButton>
-                <IconButton
-                  className={`${classes.arrowButton} ${classes.arrowRight}`}
-                  onClick={handleRightArrowClickClass}
-                  style={{
-                    backgroundColor: "white",
-                    border: "1px solid grey",
-                    borderRadius: "4px",
-                    opacity:
-                      startClassIndex + classesToShow >= UpcomingClasses.length
-                        ? 0.5
-                        : 1,
-                  }}
-                >
-                  <KeyboardArrowRight />
-                </IconButton>
-              </div>
             </div>
-            <Grid container spacing={2}>
-              {UpcomingClasses.slice(
-                startClassIndex,
-                startClassIndex + classesToShow
-              ).map((item, index) => (
-                <Grid item lg={3} md={6} sm={12} key={index}>
-                  <UpcomingClassesCard item={item} />
-                </Grid>
+            <Row>
+              {CourseFeatures.slice(0, 4).map((item, index) => (
+                <Col lg={3} md={6} sm={12} key={index}>
+                  <FeaturesCard item={item} />
+                </Col>
               ))}
-            </Grid>
-          </div>
-        </Container>
-      </section>
-      <section name="Upcoming-live-classes" className="py-8 py-lg-8bg-light">
-        <Container>
-          <div className={classes.upcomingClassesContainer}>
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "space-between",
-                alignItems: "center",
-              }}
-            >
-              <h1
-                style={{ fontSize: "55px" }}
-                className="text-dark text-center display-4 fw-bold"
+            </Row>
+          </Container>
+        </section>
+        <section name="course-curriculum" className="py-8 py-lg-8 bg-light">
+          <Container>
+            <CourseCurriculum />
+          </Container>
+        </section>
+        <section name="Upcoming-classes" className="py-8 py-lg-8 bg-light">
+          <Container>
+            <div className={classes.upcomingClassesContainer}>
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                }}
               >
-                Upcoming Live Classes
-              </h1>
-              <div style={{ display: "flex", alignItems: "center" }}>
-                <IconButton
-                  className={`${classes.arrowButton} ${classes.arrowLeft}`}
-                  onClick={handleLeftArrowClickLiveClass}
-                  style={{
-                    backgroundColor: "white",
-                    border: "1px solid grey",
-                    borderRadius: "4px",
-                    marginRight: "10px",
-                    opacity: startLiveClassIndex == 0 ? 0.5 : 1,
-                  }}
+                <h1
+                  style={{ whiteSpace: "pre-wrap", fontSize: "55px" }}
+                  className="text-dark text-center display-4 fw-bold"
                 >
-                  <KeyboardArrowLeft />
-                </IconButton>
-                <IconButton
-                  className={`${classes.arrowButton} ${classes.arrowRight}`}
-                  onClick={handleRightArrowClickLiveClass}
-                  style={{
-                    backgroundColor: "white",
-                    border: "1px solid grey",
-                    borderRadius: "4px",
-                    opacity:
-                      startLiveClassIndex + classesToShow >=
-                      UpcomingClasses.length
-                        ? 0.5
-                        : 1,
-                  }}
-                >
-                  <KeyboardArrowRight />
-                </IconButton>
-              </div>
-            </div>
-            <Grid container spacing={2}>
-              {LiveClasses.slice(
-                startLiveClassIndex,
-                startLiveClassIndex + LiveClassesToShow
-              ).map((item, index) => (
-                <Grid item lg={3} md={6} sm={12} key={index}>
-                  <UpcomingClassesCard item={item} />
-                </Grid>
-              ))}
-            </Grid>
-          </div>
-        </Container>
-      </section>
-      <section name="Classes-by-subject" className="bg-light">
-        <ClassesBySubjects />
-      </section>
-      <section name="Upcoming-courses" className="py-8 py-lg-8bg-light">
-        <Container>
-          <div className={classes.upcomingClassesContainer}>
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "space-between",
-                alignItems: "center",
-              }}
-            >
-              <h1
-                style={{ fontSize: "55px" }}
-                className="text-dark text-center display-4 fw-bold"
-              >
-                Courses
-              </h1>
-              <div style={{ display: "flex", alignItems: "center" }}>
-                <IconButton
-                  className={`${classes.arrowButton} ${classes.arrowLeft}`}
-                  onClick={handleLeftArrowClickCourses}
-                  style={{
-                    backgroundColor: "white",
-                    border: "1px solid grey",
-                    borderRadius: "4px",
-                    marginRight: "10px",
-                    opacity: startCourseIndex == 0 ? 0.5 : 1,
-                  }}
-                >
-                  <KeyboardArrowLeft />
-                </IconButton>
-                <IconButton
-                  className={`${classes.arrowButton} ${classes.arrowRight}`}
-                  onClick={handleRightArrowClickCourses}
-                  style={{
-                    backgroundColor: "white",
-                    border: "1px solid grey",
-                    borderRadius: "4px",
-                    opacity:
-                      startCourseIndex + CoursesToShow >= Courses.length
-                        ? 0.5
-                        : 1,
-                  }}
-                >
-                  <KeyboardArrowRight />
-                </IconButton>
-              </div>
-            </div>
-            <Grid container spacing={2}>
-              {Courses.slice(
-                startCourseIndex,
-                startCourseIndex + CoursesToShow
-              ).map((item, index) => (
-                <Grid item lg={3} md={6} sm={12} key={index}>
-                  <UpcomingCoursesCard item={item} />
-                </Grid>
-              ))}
-            </Grid>
-          </div>
-        </Container>
-      </section>
-      <section name="Pricing" className="bg-light">
-        <Pricing />
-      </section>
-      <section name="refer" className="py-8 py-lg-8 bg-white">
-        <Container>
-          <ReferralCard />
-        </Container>
-      </section>
-      <section name="app-download" className="bg-white">
-        <Container className="bg-white rounded-3 ">
-          <Card
-            style={{
-              display: "flex",
-              minWidth: 275,
-              backgroundColor: "white",
-              boxShadow: "0px 0px 5px 0px rgba(0,0,0,0.2)",
-              padding: "20px",
-              marginBottom: "30px",
-            }}
-          >
-            <Row className="align-items-center">
-              <Col lg={6} sm={6} xs={12}>
-                <div className="d-flex justify-content-center ">
-                  <div className="position-relative">
-                    <Image
-                      src="/images/pattern/app-download.avif"
-                      alt=""
-                      className="img-fluid"
-                    />
-                  </div>
-                </div>
-              </Col>
-              <Col lg={5} xs={12}>
-                <div className="text-dark p-5 p-lg-0">
-                  <h1
-                    style={{ fontSize: "35px" }}
-                    className="text-dark text-uppercase display-4 fw-bold"
+                  Upcoming Classes
+                </h1>
+                <div style={{ display: "flex", alignItems: "center" }}>
+                  <IconButton
+                    className={`${classes.arrowButton} ${classes.arrowLeft}`}
+                    onClick={handleLeftArrowClickClass}
+                    style={{
+                      backgroundColor: "white",
+                      border: "1px solid grey",
+                      borderRadius: "4px",
+                      marginRight: "10px",
+                      opacity: startClassIndex == 0 ? 0.5 : 1,
+                    }}
                   >
-                    Get the learning app
-                  </h1>
-                  <h3 className="mb-0 text-dark">
-                    Download lessons and learn anytime, anywhere with the Padhae
-                    app
-                  </h3>
-                  <div className="d-flex mt-15">
-                    <Link href="#">
-                      <Image
-                        src="/images/svg/appstore.svg"
-                        alt=""
-                        className="img-fluid"
-                      />
-                    </Link>
-                    <Link href="#" className="ms-2">
-                      <Image
-                        src="/images/svg/playstore.svg"
-                        alt=""
-                        className="img-fluid"
-                      />
-                    </Link>
-                  </div>
+                    <KeyboardArrowLeft />
+                  </IconButton>
+                  <IconButton
+                    className={`${classes.arrowButton} ${classes.arrowRight}`}
+                    onClick={handleRightArrowClickClass}
+                    style={{
+                      backgroundColor: "white",
+                      border: "1px solid grey",
+                      borderRadius: "4px",
+                      opacity:
+                        startClassIndex + classesToShow >=
+                        UpcomingClasses.length
+                          ? 0.5
+                          : 1,
+                    }}
+                  >
+                    <KeyboardArrowRight />
+                  </IconButton>
                 </div>
+              </div>
+              <Grid container spacing={2}>
+                {UpcomingClasses.slice(
+                  startClassIndex,
+                  startClassIndex + classesToShow
+                ).map((item, index) => (
+                  <Grid item lg={3} md={6} sm={12} key={index}>
+                    <UpcomingClassesCard item={item} />
+                  </Grid>
+                ))}
+              </Grid>
+            </div>
+          </Container>
+        </section>
+        <section name="Upcoming-live-classes" className="py-8 py-lg-8bg-light">
+          <Container>
+            <div className={classes.upcomingClassesContainer}>
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                }}
+              >
+                <h1
+                  style={{ whiteSpace: "pre-wrap", fontSize: "55px" }}
+                  className="text-dark text-center display-4 fw-bold"
+                >
+                  Upcoming Live Classes
+                </h1>
+                <div style={{ display: "flex", alignItems: "center" }}>
+                  <IconButton
+                    className={`${classes.arrowButton} ${classes.arrowLeft}`}
+                    onClick={handleLeftArrowClickLiveClass}
+                    style={{
+                      backgroundColor: "white",
+                      border: "1px solid grey",
+                      borderRadius: "4px",
+                      marginRight: "10px",
+                      opacity: startLiveClassIndex == 0 ? 0.5 : 1,
+                    }}
+                  >
+                    <KeyboardArrowLeft />
+                  </IconButton>
+                  <IconButton
+                    className={`${classes.arrowButton} ${classes.arrowRight}`}
+                    onClick={handleRightArrowClickLiveClass}
+                    style={{
+                      backgroundColor: "white",
+                      border: "1px solid grey",
+                      borderRadius: "4px",
+                      opacity:
+                        startLiveClassIndex + classesToShow >=
+                        UpcomingClasses.length
+                          ? 0.5
+                          : 1,
+                    }}
+                  >
+                    <KeyboardArrowRight />
+                  </IconButton>
+                </div>
+              </div>
+              <Grid container spacing={2}>
+                {LiveClasses.slice(
+                  startLiveClassIndex,
+                  startLiveClassIndex + LiveClassesToShow
+                ).map((item, index) => (
+                  <Grid item lg={3} md={6} sm={12} key={index}>
+                    <UpcomingClassesCard item={item} />
+                  </Grid>
+                ))}
+              </Grid>
+            </div>
+          </Container>
+        </section>
+        <section name="Classes-by-subject" className="bg-light">
+          <ClassesBySubjects />
+        </section>
+        <section name="Upcoming-courses" className="py-8 py-lg-8bg-light">
+          <Container>
+            <div className={classes.upcomingClassesContainer}>
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                }}
+              >
+                <h1
+                  style={{ fontSize: "55px" }}
+                  className="text-dark text-center display-4 fw-bold"
+                >
+                  Courses
+                </h1>
+                <div style={{ display: "flex", alignItems: "center" }}>
+                  <IconButton
+                    className={`${classes.arrowButton} ${classes.arrowLeft}`}
+                    onClick={handleLeftArrowClickCourses}
+                    style={{
+                      backgroundColor: "white",
+                      border: "1px solid grey",
+                      borderRadius: "4px",
+                      marginRight: "10px",
+                      opacity: startCourseIndex == 0 ? 0.5 : 1,
+                    }}
+                  >
+                    <KeyboardArrowLeft />
+                  </IconButton>
+                  <IconButton
+                    className={`${classes.arrowButton} ${classes.arrowRight}`}
+                    onClick={handleRightArrowClickCourses}
+                    style={{
+                      backgroundColor: "white",
+                      border: "1px solid grey",
+                      borderRadius: "4px",
+                      opacity:
+                        startCourseIndex + CoursesToShow >= Courses.length
+                          ? 0.5
+                          : 1,
+                    }}
+                  >
+                    <KeyboardArrowRight />
+                  </IconButton>
+                </div>
+              </div>
+              <Grid container spacing={2}>
+                {Courses.slice(
+                  startCourseIndex,
+                  startCourseIndex + CoursesToShow
+                ).map((item, index) => (
+                  <Grid item lg={3} md={6} sm={12} key={index}>
+                    <UpcomingCoursesCard item={item} />
+                  </Grid>
+                ))}
+              </Grid>
+            </div>
+          </Container>
+        </section>
+        <section name="Pricing" className="bg-light">
+          <Pricing />
+        </section>
+        <section name="refer" className="py-8 py-lg-8 bg-white">
+          <Container>
+            <ReferralCard />
+          </Container>
+        </section>
+        <section name="app-download" className="bg-white">
+          <Container className="bg-white rounded-3 ">
+            <Card
+              style={{
+                display: "flex",
+                minWidth: 275,
+                backgroundColor: "white",
+                boxShadow: "0px 0px 5px 0px rgba(0,0,0,0.2)",
+                padding: "20px",
+                marginBottom: "30px",
+              }}
+            >
+              <Row className="align-items-center">
+                <Col lg={6} sm={6} xs={12}>
+                  <div className="d-flex justify-content-center ">
+                    <div className="position-relative">
+                      <Image
+                        src="/images/pattern/app-download.avif"
+                        alt=""
+                        className="img-fluid"
+                      />
+                    </div>
+                  </div>
+                </Col>
+                <Col lg={5} xs={12}>
+                  <div className="text-dark p-5 p-lg-0">
+                    <h1
+                      style={{ fontSize: "35px" }}
+                      className="text-dark text-uppercase display-4 fw-bold"
+                    >
+                      Get the learning app
+                    </h1>
+                    <h3 className="mb-0 text-dark">
+                      Download lessons and learn anytime, anywhere with the
+                      Padhae app
+                    </h3>
+                    <div className="d-flex mt-15">
+                      <Link href="#">
+                        <Image
+                          src="/images/svg/appstore.svg"
+                          alt=""
+                          className="img-fluid"
+                        />
+                      </Link>
+                      <Link href="#" className="ms-2">
+                        <Image
+                          src="/images/svg/playstore.svg"
+                          alt=""
+                          className="img-fluid"
+                        />
+                      </Link>
+                    </div>
+                  </div>
+                </Col>
+              </Row>
+            </Card>
+          </Container>
+        </section>
+        <section name="Testimonials" className="py-8 py-lg-8 bg-light">
+          <Container>
+            <Row className="mb-10 justify-content-center">
+              <Col lg={8} md={12} sm={12} className="text-center">
+                <h1
+                  style={{ fontSize: "55px" }}
+                  className="text-dark text-center display-4 fw-bold"
+                >
+                  What our learners
+                  <span style={{ color: "#3c65c4" }}> are saying ?</span>
+                </h1>
+                <p className="lead">{description}</p>
               </Col>
             </Row>
-          </Card>
-        </Container>
-      </section>
-      <section name="Testimonials" className="py-8 py-lg-8 bg-light">
-        <Container>
-          <Row className="mb-10 justify-content-center">
-            <Col lg={8} md={12} sm={12} className="text-center">
-              <h1
-                style={{ fontSize: "55px" }}
-                className="text-dark text-center display-4 fw-bold"
-              >
-                What our learners
-                <span style={{ color: "#3c65c4" }}> are saying ?</span>
-              </h1>
-              <p className="lead">{description}</p>
-            </Col>
-          </Row>
-          <Row>
-            {TestimonialsList.slice(0, 3).map((item, index) => (
-              <Col lg={4} md={6} sm={12} key={index}>
-                <TestimonialColorCard item={item} />
-              </Col>
-            ))}
-          </Row>
-        </Container>
-      </section>
-      <section name="footer-links" className="bg-white">
-        <FooterWithLinks />
-      </section>
+            <Row>
+              {TestimonialsList.slice(0, 3).map((item, index) => (
+                <Col lg={4} md={6} sm={12} key={index}>
+                  <TestimonialColorCard item={item} />
+                </Col>
+              ))}
+            </Row>
+          </Container>
+        </section>
+        <section name="footer-links" className="bg-white">
+          <FooterWithLinks />
+        </section>
+      </div>
     </Fragment>
   );
 };

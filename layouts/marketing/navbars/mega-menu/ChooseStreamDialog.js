@@ -1,28 +1,11 @@
 // import node module libraries
-import { Fragment, useState, useRef } from "react";
-import { useMediaQuery } from "react-responsive";
-import { Image, Modal, NavDropdown } from "react-bootstrap";
+import { Fragment } from "react";
+import { Image } from "react-bootstrap";
 import { Row, Col } from "react-bootstrap";
-import Link from "next/link";
-// import data files
-import NavbarMegaMenuRoutes from "routes/marketing/NavbarMegaMenuRoutes";
-// import hooks
-import useMounted from "hooks/useMounted";
-import { Checkbox, IconButton, Menu, MenuItem, TextField } from "@mui/material";
-import {
-  Dialog,
-  DialogTitle,
-  DialogContent,
-  DialogActions,
-} from "@mui/material";
-import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
-import { Button } from "@mui/material";
-import ExploreMegaMenuClass, {
-  ExploreMegaMenuBoards,
-  ExploreMegaMenuExams,
-  ExploreMegaMenuLanguage,
-  ExploreMegaMenuStream,
-} from "routes/marketing/ExploreMegaMenu";
+import { IconButton } from "@mui/material";
+import { Dialog, DialogTitle, DialogContent } from "@mui/material";
+import { Button } from "react-bootstrap";
+import { ExploreMegaMenuStream } from "routes/marketing/ExploreMegaMenu";
 import { Close } from "@material-ui/icons";
 
 const ChooseStreamDialog = ({
@@ -101,22 +84,20 @@ const ChooseStreamDialog = ({
                     </Col>
                   );
                 })}
-                <Col lg={6}>
+                <Col lg={6} md={12} sm={12}>
                   <Button
                     fullWidth
-                    variant="contained"
                     onClick={handleBackClickStream}
-                    style={{ marginTop: "10px" }}
+                    style={{ marginTop: "10px", width: "100%" , borderRadius: "25px",}}
                   >
                     Back
                   </Button>
                 </Col>
-                <Col lg={6}>
+                <Col lg={6} md={12} sm={12}>
                   <Button
                     fullWidth
-                    variant="contained"
                     onClick={handleNextClickStream}
-                    style={{ marginTop: "10px" }}
+                    style={{ marginTop: "10px", width: "100%" , borderRadius: "25px"}}
                   >
                     Next
                   </Button>
@@ -129,6 +110,5 @@ const ChooseStreamDialog = ({
     </Dialog>
   );
 };
-
 
 export default ChooseStreamDialog;

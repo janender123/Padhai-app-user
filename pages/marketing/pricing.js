@@ -36,7 +36,7 @@ const Pricing = () => {
 					{/* Page header */}
 					<Row className="align-items-center">
 						<Col xl={{ span: 8, offset: 2 }} lg={12} md={12} sm={12}>
-							<div className="text-center mb-6 px-md-8">
+							<div className="text-start text-md-center text-lg-center mb-6 px-md-8">
 								<h1 className="text-white display-3 fw-bold">
 									Simple pricing plans that scales with your education goals
 								</h1>
