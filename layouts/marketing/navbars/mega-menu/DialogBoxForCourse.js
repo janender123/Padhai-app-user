@@ -170,6 +170,27 @@ const DialogBoxForCourse = () => {
     setAnchorEl(null);
   };
 
+  const [isEditMode, setIsEditMode] = useState(false);
+
+  const handleEditClick = () => {
+    setIsEditMode(!isEditMode);
+    if (isEditMode === false) seteditTitle("Done");
+    else seteditTitle("Edit");
+  };
+
+  const [exploreMegaMenuExams, setExploreMegaMenuExams] =
+    useState(ExploreMegaMenuExams);
+
+  const handleRemove = (index, subindex) => {
+    const updatedMenu = [...ExploreMegaMenuExams];
+    updatedMenu[index].children = updatedMenu[index].children.filter(
+      (_, i) => i !== subindex
+    );
+    setExploreMegaMenuExams(updatedMenu);
+  };
+
+  const [EditTitle, seteditTitle] = useState("Edit");
+
   return (
     <Fragment>
       <Button
@@ -205,11 +226,16 @@ const DialogBoxForCourse = () => {
           >
             <span style={{ marginRight: "auto" }}>My Goals</span>
             <span>
-              <h5 style={{ marginRight: "10px", cursor: "pointer" }}>Edit</h5>
+              <h5
+                style={{ marginRight: "10px", cursor: "pointer" }}
+                onClick={handleEditClick}
+              >
+                {EditTitle}
+              </h5>
             </span>
           </h2>
 
-          {ExploreMegaMenuExams.map((item, index) => (
+          {exploreMegaMenuExams.map((item, index) => (
             <>
               {item.children.map(
                 (subitem, subindex) =>
@@ -223,8 +249,27 @@ const DialogBoxForCourse = () => {
                         border: "1px solid #D9D9D9",
                         backgroundColor: "#F5F5F5",
                         borderRadius: "25px",
+                        position: "relative", // Added position relative
                       }}
                     >
+                      {isEditMode && (
+                        <div
+                          style={{
+                            position: "absolute",
+                            top: "50%",
+                            right: "10px",
+                            transform: "translateY(-50%)",
+                            cursor: "pointer",
+                          }}
+                          onClick={() => handleRemove(index, subindex)}
+                        >
+                          <Image
+                            src="/images/png/delete.png"
+                            alt="Cross Icon"
+                            width="16px"
+                          />
+                        </div>
+                      )}
                       <Image
                         src={subitem.image}
                         alt=""
