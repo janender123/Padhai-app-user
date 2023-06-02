@@ -21,9 +21,16 @@ const ChooseStreamDialog = ({
       {ExploreMegaMenuStream.map((item, index) => {
         return (
           <Fragment key={index}>
-            <DialogTitle>
-              <div className={` text-center border-top-0`}>
-                <h1 className="text-dark mb-0 pb-0">{item.menuitem}</h1>
+            <DialogTitle className="pb-0">
+              <div className={`text-center border-top-0`}>
+                <h1
+                  className="text-dark mb-0 "
+                  style={{
+                    fontSize: "30px",
+                  }}
+                >
+                  {item.menuitem}
+                </h1>
               </div>
             </DialogTitle>
             <IconButton
@@ -34,26 +41,23 @@ const ChooseStreamDialog = ({
               <Close />
             </IconButton>
             <DialogContent>
-              <Row key={index} style={{ width: "380px" }}>
+              <Row key={index}>
                 {item.children.map((subitem, subindex) => {
                   return (
                     <Col lg={12} xs={12} key={index}>
                       <div
                         className="d-flex text-center"
                         style={{
-                          border: "1px solid grey",
+                          border: "1px solid #D9D9D9",
                           margin: "5px",
-                          height: "60px",
-                          cursor: "pointer",
+                         height: "55px",
+                          backgroundColor: "#F5F5F5",
                           display: "flex",
                           justifyContent: "flex-start",
-                          borderRadius: "10px",
-                          backgroundColor:
-                            selectedStream === subindex ? "#3c65c4" : null,
-                          alignItems: "center", // align items to center
-                          paddingLeft: "15px", // add padding to the left
+                          borderRadius: "40px",
+                          alignItems: "center",
+                          paddingLeft: "15px",
                         }}
-                        onClick={() => handleSelectStream(subindex)}
                       >
                         <div
                           style={{
@@ -61,21 +65,35 @@ const ChooseStreamDialog = ({
                             display: "flex",
                             justifyContent: "center",
                             alignItems: "center",
-                            backgroundColor: "white",
-                            borderRadius: "10%",
-                            width: "30px",
-                            marginRight: "15px", // add margin to the right
-                            overflow: "hidden",
+                            backgroundColor:
+                              selectedStream === subindex ? "#3c65c4" : "#ccc",
+                            borderRadius: "50%",
+                            width: "25px",
+                            height: "25px",
+                            marginRight: "15px",
+                            cursor: "pointer",
                           }}
+                          onClick={() => handleSelectStream(subindex)}
                         >
-                          <Image src={subitem.image} alt="" height="30px" />
+                          {/* Render a checkmark icon or any other indicator inside the circle if selected */}
+                          {selectedStream === subindex && (
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              viewBox="0 0 24 24"
+                              fill="black" // Change the fill color of the checkmark icon to black
+                              width="16px"
+                              height="16px"
+                            >
+                              <path d="M0 0h24v24H0z" fill="none" />
+                              <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+                            </svg>
+                          )}
                         </div>
                         <h2
                           style={{
-                            color:
-                              selectedStream === subindex ? "white" : "black",
-                            marginTop: "8px",
-                            marginBottom: "0", // remove bottom margin
+                            color: "black",
+                            marginTop: "3px",
+                            marginBottom: "0",
                           }}
                         >
                           {subitem.subtitle}
@@ -84,24 +102,52 @@ const ChooseStreamDialog = ({
                     </Col>
                   );
                 })}
-                <Col lg={6} md={12} sm={12}>
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "flex-end",
+                    alignItems: "center",
+                    paddingTop: "20px",
+                    paddingBottom: "10px",
+                  }}
+                >
                   <Button
-                    fullWidth
                     onClick={handleBackClickStream}
-                    style={{ marginTop: "10px", width: "100%" , borderRadius: "25px",}}
+                    style={{
+                      padding: "7px",
+                      borderRadius: "50%",
+                      fontWeight: "strong",
+                      backgroundColor: "#F08223",
+                      border: "none",
+                    }}
                   >
-                    Back
+                    <Image src="/images/png/PrevIcon.png" height="30px" />
                   </Button>
-                </Col>
-                <Col lg={6} md={12} sm={12}>
+                  <div
+                    style={{
+                      flex: 1,
+                      display: "flex",
+                      justifyContent: "center",
+                    }}
+                  >
+                    <Image
+                      src="/images/brand/logo/logo-padhae-2.png"
+                      height="50px"
+                    />
+                  </div>
                   <Button
-                    fullWidth
                     onClick={handleNextClickStream}
-                    style={{ marginTop: "10px", width: "100%" , borderRadius: "25px"}}
+                    style={{
+                      padding: "7px",
+                      borderRadius: "50%",
+                      fontWeight: "strong",
+                      backgroundColor: "#F08223",
+                      border: "none",
+                    }}
                   >
-                    Next
+                    <Image src="/images/png/NextIcon.png" height="30px" />
                   </Button>
-                </Col>
+                </div>
               </Row>
             </DialogContent>
           </Fragment>

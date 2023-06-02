@@ -40,8 +40,12 @@ const CourseReadyDialog = ({
         <DialogTitle>
           <div className={` text-center border-top-0 `}>
             <h1 className="text-dark mb-0 mt-3">
-              Your customised <span style={{ color: "#3c65c4" }}> course </span>
-              <br />
+              Your{" "}
+              <span style={{ color: "#3c65c4" }}>
+                {" "}
+                customised <br />
+                course{" "}
+              </span>
               is ready!
             </h1>
           </div>
@@ -54,53 +58,45 @@ const CourseReadyDialog = ({
           <Close />
         </IconButton>
         <DialogContent>
-          <Row style={{ width: "380px" }}>
+          <Row>
             <Col lg={12} xs={12}>
               <div
                 className="d-flex text-center"
                 style={{
-                  border: "1px solid grey",
+                  border: "1px solid #D9D9D9",
                   margin: "5px",
                   height: "60px",
                   cursor: "pointer",
                   display: "flex",
                   justifyContent: "flex-start",
-                  borderRadius: "10px",
-                  // backgroundColor:
-                  //   selectedLanguage === subindex ? "#3c65c4" : null,
-                  alignItems: "center", // align items to center
-                  paddingLeft: "15px", // add padding to the left
+                  backgroundColor: "#F5F5F5",
+                  borderRadius: "30px",
+                  alignItems: "center",
+                  paddingLeft: "15px",
                 }}
                 // onClick={() => handleSelectLanguage(subindex)}
               >
                 {ExploreMegaMenuClass[0].children.map((subitem, subindex) => {
                   if (subindex === selectedClass) {
                     return (
-                      <p
+                      <div
                         key={subindex}
-                        style={{
-                          marginTop: "10px",
-                          width: "100%",
-                          borderRadius: "25px",
-                        }}
+                        style={{ display: "flex", alignItems: "center" }}
                       >
-                        Class
-                        <h3
-                          key={subindex}
-                          style={{
-                            marginBottom: "0",
-                            width: "60px",
-                          }}
-                        >
+                        <h3 style={{ marginBottom: "0", marginRight: "0px" }}>
+                          Class :
+                        </h3>
+                        <h3 style={{ marginBottom: "0", width: "60px" }}>
                           {subitem.subtitle}
                         </h3>
-                      </p>
+                      </div>
                     );
                   }
                 })}
+
                 <div
                   style={{
-                    borderRight: "1px solid grey",
+                    border: "1px solid #D9D9D9",
                     height: "40px",
                     margin: "0 15px",
                   }}
@@ -109,60 +105,54 @@ const CourseReadyDialog = ({
                 {ExploreMegaMenuBoards[0].children.map((subitem, subindex) => {
                   if (subindex === selectedBoard) {
                     return (
-                      <>
-                        <div
-                          style={{
-                            display: "flex",
-                            flexDirection: "column",
-                            alignItems: "start",
-                          }}
-                        >
-                          <p style={{ marginTop: "0px", marginBottom: "0" }}>
-                            Board
-                          </p>
+                      <div
+                        key={subindex}
+                        style={{
+                          display: "flex",
+                          alignItems: "center",
+                          margin: "0px",
+                          backgroundColor: "#F5F5F5",
+                          borderRadius: "10%",
+                          width: "200px",
+                          overflow: "hidden",
+                        }}
+                      >
+                        <div style={{ marginLeft: "10px" }}>
                           <div
-                            key={subindex}
-                            style={{
-                              margin: "0px",
-                              display: "flex",
-                              justifyContent: "start",
-                              alignItems: "start",
-                              backgroundColor: "white",
-                              borderRadius: "10%",
-                              width: "200px",
-                              overflow: "hidden",
-                            }}
+                            style={{ display: "flex", alignItems: "center" }}
                           >
+                            <h3 style={{ margin: "0px", marginRight: "5px" }}>
+                              Board :
+                            </h3>
+
                             <Image src={subitem.image} alt="" height="30px" />
                             <h3 style={{ margin: "0px" }}>
                               {subitem.subtitle}
                             </h3>
                           </div>
                         </div>
-                      </>
+                      </div>
                     );
                   }
                 })}
               </div>
             </Col>
             <Col lg={12} xs={12}>
-              <h5>Exams you are preparing for</h5>
+              <h3 className="text-center ">Exams you are preparing for : </h3>
               <div
                 className="d-flex text-center"
                 style={{
-                  border: "1px solid grey",
+                  border: "1px solid #D9D9D9",
                   margin: "5px",
                   height: "60px",
                   cursor: "pointer",
+                  backgroundColor: "#F5F5F5",
                   display: "flex",
-                  justifyContent: "flex-start",
-                  borderRadius: "10px",
-                  // backgroundColor:
-                  //   selectedLanguage === subindex ? "#3c65c4" : null,
-                  alignItems: "center", // align items to center
-                  paddingLeft: "0px", // add padding to the left
+                  justifyContent: "center",
+                  borderRadius: "30px",
+                  alignItems: "center",
+                  paddingLeft: "0px",
                 }}
-                // onClick={() => handleSelectLanguage(subindex)}
               >
                 {ExploreMegaMenuExams[0].children.map((subitem, subindex) => {
                   if (subindex === selectedExam) {
@@ -171,55 +161,91 @@ const CourseReadyDialog = ({
                         key={subindex}
                         style={{
                           margin: "0",
-                          display: "flex",
-                          justifyContent: "center",
-                          alignItems: "center",
-                          backgroundColor: "white",
+                          backgroundColor: "#F5F5F5",
                           borderRadius: "10%",
                           width: "200px",
-                          marginRight: "15px", // add margin to the right
-                          overflow: "hidden",
                         }}
                       >
-                        <Image src={subitem.image} alt="" height="30px" />
-                        <h3
+                        <div
                           style={{
-                            marginTop: "0px",
-                            marginBottom: "0", // remove bottom margin
+                            display: "flex",
+                            justifyContent: "center",
+                            alignItems: "center",
                           }}
                         >
-                          {subitem.subtitle}
-                        </h3>
+                          <Image src={subitem.image} alt="" height="30px" />
+                          <h3
+                            style={{
+                              marginTop: "0px",
+                              marginBottom: "0",
+                              marginLeft: "10px",
+                            }}
+                          >
+                            {subitem.subtitle}
+                          </h3>
+                        </div>
                       </div>
                     );
                   }
                 })}
               </div>
             </Col>
-            <Col lg={6}>
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "flex-end",
+                alignItems: "center",
+                paddingTop: "20px",
+                paddingBottom: "10px",
+              }}
+            >
               <Button
                 onClick={handleBackClickCourseReady}
                 style={{
-                  marginTop: "10px",
-                  width: "100%",
-                  borderRadius: "25px",
+                  padding: "7px",
+                  borderRadius: "30px",
+                  fontWeight: "strong",
+                  backgroundColor: "#F08223",
+                  border: "none",
                 }}
               >
-                Start Over
+                <Image
+                  src="/images/png/StartOver.png"
+                  height="15px"
+                  style={{ margin: "0 5px 2px 5px" }}
+                />
+                <span className="mt-2">Start Over</span>
               </Button>
-            </Col>
-            <Col lg={6}>
+              <div
+                style={{
+                  flex: 1,
+                  display: "flex",
+                  justifyContent: "center",
+                }}
+              >
+                <Image
+                  src="/images/brand/logo/logo-padhae-2.png"
+                  height="50px"
+                />
+              </div>
               <Button
                 onClick={handleSubmitCourseReady}
                 style={{
-                  marginTop: "10px",
-                  width: "100%",
-                  borderRadius: "25px",
+                  padding: "7px",
+                  borderRadius: "30px",
+                  fontWeight: "strong",
+                  backgroundColor: "#F08223",
+                  border: "none",
                 }}
               >
-                Join this course
+                <Image
+                  src="/images/png/JoinNow.png"
+                  height="15px"
+                  style={{ margin: "0 5px 2px 5px" }}
+                />
+                Join Now
               </Button>
-            </Col>
+            </div>
           </Row>
         </DialogContent>
       </Fragment>

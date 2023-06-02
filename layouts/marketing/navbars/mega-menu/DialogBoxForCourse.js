@@ -96,8 +96,8 @@ const DialogBoxForCourse = () => {
           fontWeight: "500",
           fontSize: "1em",
           textTransform: "capitalize",
-          marginTop: '-4px',
-          marginBottom: '-4px'
+          marginTop: "-4px",
+          marginBottom: "-4px",
         }}
       >
         {selectedExamText}
@@ -172,7 +172,11 @@ const DialogBoxForCourse = () => {
 
   return (
     <Fragment>
-      <Button onClick={handleExploreClick} variant="outline-primary" id="explore-button">
+      <Button
+        onClick={handleExploreClick}
+        variant="outline-primary"
+        id="explore-button"
+      >
         {exploreButtonText}
       </Button>
 
@@ -193,10 +197,18 @@ const DialogBoxForCourse = () => {
           onClose={handleMenuClose}
         >
           <h2
-            style={{ fontWeight: "bold", margin: "10px", marginLeft: "20px" }}
+            style={{
+              marginLeft: "10px",
+              display: "flex",
+              alignItems: "center",
+            }}
           >
-            My Goals
+            <span style={{ marginRight: "auto" }}>My Goals</span>
+            <span>
+              <h5 style={{ marginRight: "10px", cursor: "pointer" }}>Edit</h5>
+            </span>
           </h2>
+
           {ExploreMegaMenuExams.map((item, index) => (
             <>
               {item.children.map(
@@ -205,30 +217,61 @@ const DialogBoxForCourse = () => {
                     <MenuItem
                       key={`${index}-${subindex}`}
                       style={{
+                        height: "55px",
+                        width: "400px",
                         margin: "10px",
-                        border: "1px solid grey",
+                        border: "1px solid #D9D9D9",
+                        backgroundColor: "#F5F5F5",
                         borderRadius: "25px",
                       }}
                     >
                       <Image
                         src={subitem.image}
                         alt=""
-                        height="inherit"
-                        width="50px"
+                        width="55px"
+                        height="52px"
                         style={{ marginRight: "10px" }}
                       />
-                      <ListItemText primary={subitem.subtitle} />
+                      <h4
+                        style={{
+                          color: "black",
+                          ":hover": { color: "blue" },
+                        }}
+                      >
+                        {subitem.subtitle}
+                      </h4>
                     </MenuItem>
                   )
               )}
             </>
           ))}
           <Button
-            startIcon={<AddIcon />}
-            style={{ margin: "10px", marginLeft: "10px", width: "400px",borderRadius: "25px", }}
+            style={{
+              backgroundColor: "white",
+              margin: "10px",
+              marginTop: "25px",
+              marginLeft: "10px",
+              height: "45px",
+              width: "210px",
+              border: "1px solid grey",
+              borderRadius: "25px",
+              display: "flex", // Added display flex
+              alignItems: "center", // Align items vertically
+            }}
             onClick={handleAddNewGoal}
           >
-            Add another Goal
+            <div
+              style={{
+                backgroundColor: "#F08223",
+                borderRadius: "50%",
+                padding: "3px",
+                marginRight: "5px",
+                marginLeft: "-10px",
+              }}
+            >
+              <Image src="/images/png/PlusIcon.png" height="20px" />
+            </div>
+            <h4 style={{ color: "black", margin: 0 }}>Add another Goal</h4>
           </Button>
         </Menu>
       ) : null}

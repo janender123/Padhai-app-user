@@ -21,7 +21,7 @@ import ExploreMegaMenuClass, {
   ExploreMegaMenuBoards,
   ExploreMegaMenuExams,
   ExploreMegaMenuLanguage,
-  ExploreMegaMenuStream,
+  ExploreMegaMenuBoard,
 } from "routes/marketing/ExploreMegaMenu";
 import { Close } from "@material-ui/icons";
 
@@ -64,7 +64,7 @@ const ChooseBoardDialog = ({
                   borderRadius: "10px",
                 }}
               />
-              <Row key={index} style={{ width: "380px" }}>
+              <Row key={index}>
                 {item.children
                   .filter(
                     (subitem) =>
@@ -79,19 +79,16 @@ const ChooseBoardDialog = ({
                         <div
                           className="d-flex text-center"
                           style={{
-                            border: "1px solid grey",
+                            border: "1px solid #D9D9D9",
                             margin: "5px",
-                            height: "60px",
-                            cursor: "pointer",
+                            height: "55px",
                             display: "flex",
                             justifyContent: "flex-start",
-                            borderRadius: "10px",
-                            backgroundColor:
-                              selectedBoard === subindex ? "#3c65c4" : null,
+                            borderRadius: "40px",
+                            backgroundColor: "#F5F5F5",
                             alignItems: "center", // align items to center
                             paddingLeft: "15px", // add padding to the left
                           }}
-                          onClick={() => handleSelectBoard(subindex)}
                         >
                           <div
                             style={{
@@ -99,20 +96,49 @@ const ChooseBoardDialog = ({
                               display: "flex",
                               justifyContent: "center",
                               alignItems: "center",
-                              backgroundColor: "white",
+                              backgroundColor:
+                                selectedBoard === subindex ? "#3c65c4" : "#ccc",
+                              borderRadius: "50%",
+                              width: "25px",
+                              height: "25px",
+                              marginRight: "15px",
+                              cursor: "pointer",
+                            }}
+                            onClick={() => handleSelectBoard(subindex)}
+                          >
+                            {/* Render a checkmark icon or any other indicator inside the circle if selected */}
+                            {selectedBoard === subindex && (
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24"
+                                fill="black" // Change the fill color of the checkmark icon to black
+                                width="16px"
+                                height="16px"
+                              >
+                                <path d="M0 0h24v24H0z" fill="none" />
+                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+                              </svg>
+                            )}
+                          </div>
+                          <div
+                            style={{
+                              margin: "0",
+                              display: "flex",
+                              justifyContent: "center",
+                              alignItems: "center",
+                              backgroundColor: "#F5F5F5",
                               borderRadius: "10%",
-                              width: "40px",
+                              width: "55px",
+                              height: "52px",
                               marginRight: "15px", // add margin to the right
                               overflow: "hidden",
                             }}
                           >
-                            <Image src={subitem.image} alt="" height="40px" />
+                            <Image src={subitem.image} alt="" height="45px" />
                           </div>
                           <h2
                             style={{
-                              color:
-                                selectedBoard === subindex ? "white" : "black",
-                              marginTop: "8px",
+                              marginTop: "3px",
                               marginBottom: "0", // remove bottom margin
                             }}
                           >
@@ -122,24 +148,52 @@ const ChooseBoardDialog = ({
                       </Col>
                     );
                   })}
-                <Col lg={6}>
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "flex-end",
+                    alignItems: "center",
+                    paddingTop: "20px",
+                    paddingBottom: "10px",
+                  }}
+                >
                   <Button
-                    fullWidth
                     onClick={handleBackClickBoard}
-                     style={{ marginTop: "10px", width: "100%" , borderRadius: "25px",}}
+                    style={{
+                      padding: "7px",
+                      borderRadius: "50%",
+                      fontWeight: "strong",
+                      backgroundColor: "#F08223",
+                      border: "none",
+                    }}
                   >
-                    Back
+                    <Image src="/images/png/PrevIcon.png" height="30px" />
                   </Button>
-                </Col>
-                <Col lg={6}>
+                  <div
+                    style={{
+                      flex: 1,
+                      display: "flex",
+                      justifyContent: "center",
+                    }}
+                  >
+                    <Image
+                      src="/images/brand/logo/logo-padhae-2.png"
+                      height="50px"
+                    />
+                  </div>
                   <Button
-                    fullWidth
                     onClick={handleNextClickBoard}
-                     style={{ marginTop: "10px", width: "100%" , borderRadius: "25px",}}
+                    style={{
+                      padding: "7px",
+                      borderRadius: "50%",
+                      fontWeight: "strong",
+                      backgroundColor: "#F08223",
+                      border: "none",
+                    }}
                   >
-                    Next
+                    <Image src="/images/png/NextIcon.png" height="30px" />
                   </Button>
-                </Col>
+                </div>
               </Row>
             </DialogContent>
           </Fragment>

@@ -39,7 +39,14 @@ const ChooseClassDialog = ({
           <Fragment key={index}>
             <DialogTitle>
               <div className={` text-center border-top-0`}>
-                <h1 className="text-dark mb-3">{item.menuitem}</h1>
+                <h1
+                  className="text-dark mb-1"
+                  style={{
+                    fontSize: "30px",
+                  }}
+                >
+                  {item.menuitem}
+                </h1>
               </div>
               <IconButton
                 aria-label="close"
@@ -50,23 +57,22 @@ const ChooseClassDialog = ({
               </IconButton>
             </DialogTitle>
             <DialogContent>
-              <Row key={index} style={{ width: "380px" }}>
+              <Row key={index} style={{ width: "450px" }}>
                 {item.children.map((subitem, subindex) => {
                   return (
-                    <Col xl={4} lg={4} md={4} xs={6} sm={6} style={{padding:'7px'}}>
+                    <Col xl={4} lg={4} md={4} xs={6} sm={6}>
                       <div
                         className="d-flex text-center"
                         style={{
-                          border: "1px solid grey",
-                          margin: "3px",
-                          height: "60px",
-                          width: "100px",
-                          height: "60px",
+                          border: "1px solid #D9D9D9",
+                          margin: "6px 0",
+                          width: "135px",
+                          height: "50px",
                           cursor: "pointer",
-                          borderRadius: "10px",
+                          borderRadius: "20px",
                           justifyContent: "center",
                           backgroundColor:
-                            selectedClass === subindex ? "#3c65c4" : null,
+                            selectedClass === subindex ? "#3c65c4" : "#F5F5F5",
                         }}
                         onClick={() => handleSelectClass(subindex)}
                       >
@@ -75,7 +81,7 @@ const ChooseClassDialog = ({
                           style={{
                             color:
                               selectedClass === subindex ? "white" : "black",
-                            marginTop: "12px",
+                            marginTop: "6px",
                           }}
                         >
                           {subitem.subtitle}
@@ -84,26 +90,40 @@ const ChooseClassDialog = ({
                     </Col>
                   );
                 })}
-                <Col lg={12} md={12} sm={12}>
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "flex-end",
+                    alignItems: "center",
+                    paddingTop: "20px",
+                    paddingBottom: '10px'
+                  }}
+                >
                   <div
                     style={{
+                      flex: 1,
                       display: "flex",
                       justifyContent: "center",
-                      marginTop: "10px",
                     }}
                   >
-                    <Button
-                      onClick={handleNextClickClass}
-                      style={{
-                        padding: "10px 30px",
-                        borderRadius: "25px",
-                        fontWeight: "strong",
-                      }}
-                    >
-                      Next
-                    </Button>
+                    <Image
+                      src="/images/brand/logo/logo-padhae-2.png"
+                      height="50px"
+                    />
                   </div>
-                </Col>
+                  <Button
+                    onClick={handleNextClickClass}
+                    style={{
+                      padding: "7px",
+                      borderRadius: "50%",
+                      fontWeight: "strong",
+                      backgroundColor: "#F08223",
+                      border: "none",
+                    }}
+                  >
+                    <Image src="/images/png/NextIcon.png" height="30px" />
+                  </Button>
+                </div>
               </Row>
             </DialogContent>
           </Fragment>
