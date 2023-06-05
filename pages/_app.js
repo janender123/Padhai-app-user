@@ -15,6 +15,7 @@ import "styles/theme.scss";
 // import default layouts
 import DefaultMarketingLayout from "layouts/marketing/DefaultLayout";
 import DefaultDashboardLayout from "layouts/dashboard/DashboardIndex";
+import MainPageLayout from "layouts/marketing/MainPageLayout";
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
@@ -32,6 +33,8 @@ function MyApp({ Component, pageProps }) {
         router.pathname.includes("student")
         ? DefaultMarketingLayout
         : DefaultDashboardLayout
+      : router.pathname === "/"
+      ? MainPageLayout // Add your custom Navbar layout component here
       : DefaultMarketingLayout);
 
   return (

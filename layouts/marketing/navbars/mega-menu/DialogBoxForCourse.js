@@ -90,17 +90,30 @@ const DialogBoxForCourse = () => {
     setDialogOpenCourseReady(false);
     const selectedExamText =
       ExploreMegaMenuExams[0].children[selectedExam].subtitle;
+
+    const selectedClassText =
+      ExploreMegaMenuClass[0].children[selectedClass].subtitle;
+
+    const extractedDigits = selectedClassText.props.children
+      .toString()
+      .replace(/\D/g, "");
+
+    const examTextWithClass =
+      selectedExamText === "Boards"
+        ? `Class : ${extractedDigits} ${selectedExamText}`
+        : selectedExamText;
+
     setExploreButtonText(
       <h3
         style={{
-          fontWeight: "500",
+          fontWeight: "bold",
           fontSize: "1em",
           textTransform: "capitalize",
           marginTop: "-4px",
           marginBottom: "-4px",
         }}
       >
-        {selectedExamText}
+        {examTextWithClass}
         <ArrowDropDownIcon />
       </h3>
     );
@@ -197,6 +210,10 @@ const DialogBoxForCourse = () => {
         onClick={handleExploreClick}
         variant="outline-primary"
         id="explore-button"
+        style={{
+          marginRight: "40px",
+          marginLeft: "10px",
+        }}
       >
         {exploreButtonText}
       </Button>

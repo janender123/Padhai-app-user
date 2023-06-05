@@ -756,4 +756,31 @@ const NavbarDefault = [
   },
 ];
 
+const NavbarLandingPageMenu = [
+  {
+    id: uuid(),
+    menuitem: "About",
+    link: "#",
+    children: [
+      {
+        id: uuid(),
+        menuitem: "About",
+        link: "#",
+      },
+    ],
+  },
+  {
+    id: uuid(),
+    menuitem: "Contact Us",
+    link: "#",
+    children: [
+      {
+        id: uuid(),
+        menuitem: "Contact Us",
+        link: "#",
+      },
+    ],
+  },
+];
 export default NavbarDefault;
+export { NavbarLandingPageMenu };

@@ -80,7 +80,7 @@ const ExploreMegaMenuClass = [
         subtitle: <div>12 +</div>,
         image: "/images/png/number-13.png",
         link: "#",
-      }
+      },
     ],
   },
 ];
@@ -173,11 +173,10 @@ const ExploreMegaMenuExams = [
         subtitle: "UPSC",
         image: "/images/boards-icons/upsc-icon.jpg",
         link: "#",
-      }
+      },
     ],
   },
 ];
-
 
 const ExploreMegaMenuLanguage = [
   {
@@ -198,7 +197,7 @@ const ExploreMegaMenuLanguage = [
         id: uuid(),
         subtitle: "Hinglish",
         link: "#",
-      }
+      },
     ],
   },
 ];

@@ -21,7 +21,11 @@ const SignIn = () => {
 						<Card.Body className="p-6">
 							<div className="mb-4">
 								<Link href="/">
-									<Image src="/images/brand/logo/logo-icon.svg" className="mb-4" alt="" />
+									<Image
+              src="/images/brand/logo/logo-padhae-2.png"
+              alt=""
+              style={{ height: "1.875rem" }}
+            />
 								</Link>
 								<h1 className="mb-1 fw-bold">Sign in</h1>
 								<span>

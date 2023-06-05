@@ -2,9 +2,6 @@
 import { Fragment, useEffect, useState } from "react";
 import { Col, Row, Container, Button, Image } from "react-bootstrap";
 import { useMediaQuery } from "@material-ui/core";
-
-// import widget/custom components
-import { CourseSlider, FeaturesList, HeroHeader } from "widgets";
 import { StatTopSVGIcon } from "widgets";
 
 // import required data files
@@ -13,13 +10,11 @@ import { SectionHeadingCenter, TestimonialColorCard } from "widgets";
 import { TestimonialsList } from "data/testimonials/TestimonialsList";
 import PopularBoardsAndExams from "widgets/testimonials/PopularBoardsAndExams";
 import PopularBoardsAndExamsList from "data/testimonials/PopularBoardsAndExamsList";
-import ModalVideo from "react-modal-video";
 import Link from "next/link";
 import WhyChooseUs from "data/testimonials/WhyChooseUs";
-import Icon from "@mdi/react";
-import { ImageAlt } from "react-bootstrap-icons";
 import FooterWithLinks from "layouts/marketing/footers/FooterWithLinks";
 import { HeroAcademy } from "sub-components";
+import NavbarLandingPage from "layouts/marketing/navbars/NavbarLandingPage";
 
 const Home = () => {
   const title = "What our learners are saying";
@@ -32,6 +27,7 @@ const Home = () => {
   });
   return (
     <Fragment>
+      {/* <NavbarLandingPage /> */}
       <div style={{ padding: isSmallScreen ? "10px" : "" }}>
         {/*  Page Content  */}
         <section name="heading page">

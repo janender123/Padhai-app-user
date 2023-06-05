@@ -228,23 +228,25 @@ const CourseReadyDialog = ({
                   height="50px"
                 />
               </div>
-              <Button
-                onClick={handleSubmitCourseReady}
-                style={{
-                  padding: "7px",
-                  borderRadius: "30px",
-                  fontWeight: "strong",
-                  backgroundColor: "#F08223",
-                  border: "none",
-                }}
-              >
-                <Image
-                  src="/images/png/JoinNow.png"
-                  height="15px"
-                  style={{ margin: "0 5px 2px 5px" }}
-                />
-                Join Now
-              </Button>
+              <Link href="/course/course-landing-page">
+                <Button
+                  onClick={handleSubmitCourseReady}
+                  style={{
+                    padding: "7px",
+                    borderRadius: "30px",
+                    fontWeight: "strong",
+                    backgroundColor: "#F08223",
+                    border: "none",
+                  }}
+                >
+                  <Image
+                    src="/images/png/JoinNow.png"
+                    height="15px"
+                    style={{ margin: "0 5px 2px 5px" }}
+                  />
+                  Join Now
+                </Button>
+              </Link>
             </div>
           </Row>
         </DialogContent>
