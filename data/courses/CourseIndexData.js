@@ -597,138 +597,138 @@ export const CourseIndex = [
 ];
 
 export const CourseFAQs = [
-	{
-		id: 1,
-		question: 'How this course help me to design layout?',
-		answer: `<p>My name is Jason Woo and I work as human duct tape at Gatsby, 
+  {
+    id: 1,
+    question: "How this course help me to design layout?",
+    answer: `<p>My name is Jason Woo and I work as human duct tape at Gatsby, 
         that means that I do a lot of different things. Everything from dev 
         roll to writing content to writing code. And I used to work as an architect at IBM. 
-        I live in Portland, Oregon.</p>`
-	},
-	{
-		id: 2,
-		question: 'What is important of this course?',
-		answer: `<p>We'll dive into GraphQL, the fundamentals of GraphQL. 
+        I live in Portland, Oregon.</p>`,
+  },
+  {
+    id: 2,
+    question: "What is important of this course?",
+    answer: `<p>We'll dive into GraphQL, the fundamentals of GraphQL. 
         We're only gonna use the pieces of it that we need to build in Gatsby. 
         We're not gonna be doing a deep dive into what GraphQL is or the language specifics. 
-        We're also gonna get into MDX. MDX is a way to write React components in your markdown.</p>`
-	},
-	{
-		id: 3,
-		question: 'Why Take This Course?',
-		answer: `<p>We'll dive into GraphQL, the fundamentals of GraphQL. 
+        We're also gonna get into MDX. MDX is a way to write React components in your markdown.</p>`,
+  },
+  {
+    id: 3,
+    question: "Why Take This Course?",
+    answer: `<p>We'll dive into GraphQL, the fundamentals of GraphQL. 
         We're only gonna use the pieces of it that we need to build in Gatsby. 
         We're not gonna be doing a deep dive into what GraphQL is or the language specifics.
-        We're also gonna get into MDX. MDX is a way to write React components in your markdown.</p>`
-	},
-	{
-		id: 4,
-		question: 'Is able to create application after this course?',
-		answer: `<p>
+        We're also gonna get into MDX. MDX is a way to write React components in your markdown.</p>`,
+  },
+  {
+    id: 4,
+    question: "Is able to create application after this course?",
+    answer: `<p>
         We'll dive into GraphQL, the fundamentals of GraphQL. We're only gonna use the pieces of it that we need to build in Gatsby. We're not gonna be doing a deep dive into what GraphQL is or the language specifics. We're also gonna get into MDX. MDX is a way
         to write React components in your markdown.</p>
         <p>We'll dive into GraphQL, the fundamentals of GraphQL. We're only gonna use the pieces of it that we need to build in Gatsby. We're not gonna be doing a deep dive into what GraphQL is or the language specifics. We're also gonna get into MDX. MDX is a way
-            to write React components in your markdown.</p>`
-	}
+            to write React components in your markdown.</p>`,
+  },
 ];
 
 export const Transcripts = [
-	{
-		id: 1,
-		order: 1,
-    title: 'Course Overview',
-		duration: '[00:00:00]',
-		description: `<p class="mb-0">My name is John Deo and I work as human duct tape at Gatsby, 
+  {
+    id: 1,
+    order: 1,
+    title: "Course Overview",
+    duration: "[00:00:00]",
+    description: `<p class="mb-0">My name is John Deo and I work as human duct tape at Gatsby, 
         that means that I do a lot of different things. Everything from dev roll to writing 
         content to writing code. And I used to work as an architect at IBM. I live in Portland, 
-        Oregon.</p>`
-	},
-	{
-		id: 2,
-		order: 1,
-    title: 'Introduction',
-		duration: '[00:00:16]',
-		description: `<p>We'll dive into GraphQL, the fundamentals of GraphQL. 
+        Oregon.</p>`,
+  },
+  {
+    id: 2,
+    order: 1,
+    title: "Introduction",
+    duration: "[00:00:16]",
+    description: `<p>We'll dive into GraphQL, the fundamentals of GraphQL. 
         We're only gonna use the pieces of it that we need to build in Gatsby. 
         We're not gonna be doing a deep dive into what GraphQL is or the language specifics. 
-        We're also gonna get into MDX. MDX is a way to write React components in your markdown.</p>`
-	},
-	{
-		id: 3,
-		order: 1,
-    title: 'Why Take This Course?',
-		duration: '[00:00:37]',
-		description: `<p> We'll dive into GraphQL, the fundamentals of GraphQL. 
+        We're also gonna get into MDX. MDX is a way to write React components in your markdown.</p>`,
+  },
+  {
+    id: 3,
+    order: 1,
+    title: "Why Take This Course?",
+    duration: "[00:00:37]",
+    description: `<p> We'll dive into GraphQL, the fundamentals of GraphQL. 
         We're only gonna use the pieces of it that we need to build in Gatsby. 
         We're not gonna be doing a deep dive into what GraphQL is or the language specifics. 
-        We're also gonna get into MDX. MDX is a way to write React components in your markdown.</p>`
-	},
-	{
-		id: 4,
-		order: 1,
-    title: 'A Look at the Demo Application',
-		duration: '[00:00:54]',
-		description: `<p>We'll dive into GraphQL, the fundamentals of GraphQL. 
+        We're also gonna get into MDX. MDX is a way to write React components in your markdown.</p>`,
+  },
+  {
+    id: 4,
+    order: 1,
+    title: "A Look at the Demo Application",
+    duration: "[00:00:54]",
+    description: `<p>We'll dive into GraphQL, the fundamentals of GraphQL. 
         We're only gonna use the pieces of it that we need to build in Gatsby. 
         We're not gonna be doing a deep dive into what GraphQL is or the language specifics. 
         We're also gonna get into MDX. MDX is a way to write React components in your markdown.</p>
         <p>We'll dive into GraphQL, the fundamentals of GraphQL. 
         We're only gonna use the pieces of it that we need to build in Gatsby. 
         We're not gonna be doing a deep dive into what GraphQL is or the language specifics. 
-        We're also gonna get into MDX. MDX is a way to write React components in your markdown.</p>`
-	},
-	{
-		id: 5,
-		order: 1,
-    title: 'Summary',
-		duration: '[00:01:31]',
-		description: `<p> We'll dive into GraphQL, the fundamentals of GraphQL. 
+        We're also gonna get into MDX. MDX is a way to write React components in your markdown.</p>`,
+  },
+  {
+    id: 5,
+    order: 1,
+    title: "Summary",
+    duration: "[00:01:31]",
+    description: `<p> We'll dive into GraphQL, the fundamentals of GraphQL. 
         We're only gonna use the pieces of it that we need to build in Gatsby. 
         We're not gonna be doing a deep dive into what GraphQL is or the language specifics. 
-        We're also gonna get into MDX. MDX is a way to write React components in your markdown.</p>`
-	}
+        We're also gonna get into MDX. MDX is a way to write React components in your markdown.</p>`,
+  },
 ];
 
 export const Reviews = [
-	{
-		id: 1,
-		student: 'Max Hawkins',
-		image: '/images/avatar/avatar-2.jpg',
-		postedon: '2 Days ago',
-		rating: 5,
-		review: `<p>Lectures were at a really good pace and I never felt lost. The
+  {
+    id: 1,
+    student: "Max Hawkins",
+    image: "/images/avatar/avatar-2.jpg",
+    postedon: "2 Days ago",
+    rating: 5,
+    review: `<p>Lectures were at a really good pace and I never felt lost. The
         instructor was well informed and allowed me to learn and navigate
-        Figma easily.</p>`
-	},
-	{
-		id: 2,
-		student: 'Arthur Williamson',
-		image: '/images/avatar/avatar-3.jpg',
-		postedon: 'Days ago',
-		rating: 5,
-		review: `<p>Its pretty good.Just a reminder that there are also students with
-        Windows, meaning Figma its a bit different of yours. Thank you!</p>`
-	},
-	{
-		id: 3,
-		student: 'Claire Jones',
-		image: '/images/avatar/avatar-4.jpg',
-		postedon: '4 Days ago',
-		rating: 4.5,
-		review: `<p>Great course for learning Figma, the only bad detail would be that
+        Figma easily.</p>`,
+  },
+  {
+    id: 2,
+    student: "Arthur Williamson",
+    image: "/images/avatar/avatar-3.jpg",
+    postedon: "Days ago",
+    rating: 5,
+    review: `<p>Its pretty good.Just a reminder that there are also students with
+        Windows, meaning Figma its a bit different of yours. Thank you!</p>`,
+  },
+  {
+    id: 3,
+    student: "Claire Jones",
+    image: "/images/avatar/avatar-4.jpg",
+    postedon: "4 Days ago",
+    rating: 4.5,
+    review: `<p>Great course for learning Figma, the only bad detail would be that
         some icons are not included in the assets. But 90% of the icons
         needed are included, and the voice of the instructor was very clear
-        and easy to understood.</p>`
-	},
-	{
-		id: 4,
-		student: 'Bessie Pena',
-		image: '/images/avatar/avatar-5.jpg',
-		postedon: '5 Days ago',
-		rating: 4.5,
-		review: `<p>I have really enjoyed this class and learned a lot, found it very
-        inspiring and helpful, thank you!<i className="em em-heart_eyes ms-2 fs-6"></i></p>`
-	}
+        and easy to understood.</p>`,
+  },
+  {
+    id: 4,
+    student: "Bessie Pena",
+    image: "/images/avatar/avatar-5.jpg",
+    postedon: "5 Days ago",
+    rating: 4.5,
+    review: `<p>I have really enjoyed this class and learned a lot, found it very
+        inspiring and helpful, thank you!<i className="em em-heart_eyes ms-2 fs-6"></i></p>`,
+  },
 ];
 
 export const CourseIndexData = [CourseIndex, Reviews, Transcripts, CourseFAQs];

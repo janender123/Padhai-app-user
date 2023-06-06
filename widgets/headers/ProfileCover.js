@@ -41,7 +41,7 @@ const ProfileCover = ({ dashboardData }) => {
 							</div>
 						</div>
 						<div>
-							<Link href="add-course.html"
+							<Link href="add-new-course"
 								className="btn btn-primary d-none d-md-block">
 								Create New Course
 							</Link>

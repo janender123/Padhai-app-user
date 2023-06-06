@@ -7,7 +7,7 @@ export const starter = [
         access.`,
 		monthly: 0,
 		yearly: 0,
-		buttonText: 'Get Started For Free',
+		buttonText: 'Get Started',
 		buttonClass: 'outline-primary',
 		featureHeading: 'All core features, including:',
 		features: [
@@ -30,7 +30,7 @@ export const individual = [
         Renewed monthly.`,
 		monthly: 99,
 		yearly: 399,
-		buttonText: 'Get Started For Free',
+		buttonText: 'Get Started',
 		buttonClass: 'primary',
 		featureHeading: 'Everything in Starter, plus:',
 		features: [
@@ -53,7 +53,7 @@ export const team = [
         year! Renewed yearly.`,
     monthly: 199,
     yearly: 999,
-    buttonText: "Get Started For Free",
+    buttonText: "Get Started",
     buttonClass: "outline-primary",
     featureHeading: "Everything in Individual, plus:",
     features: [

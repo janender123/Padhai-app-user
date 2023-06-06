@@ -33,7 +33,7 @@ const PricingCard = ({ content, pricingMode }) => {
 
           <div className="d-grid">
             <Link
-              href="#"
+              href="/marketing/courses/course-checkout"
               className={`btn btn-${
                 plan.buttonClass ? plan.buttonClass : "outline-primary"
               }`}

@@ -35,8 +35,9 @@ import {
 // import data files
 import { CourseIndex } from "data/courses/CourseIndexData";
 import { AllCoursesData } from "data/slider/AllCoursesData";
-import { Button, CardContent, CardMedia, Typography } from "@mui/material";
+import { CardContent, CardMedia, Typography } from "@mui/material";
 import { useRouter } from "next/router";
+import { Button } from "react-bootstrap";
 
 const CourseSingle = () => {
   const [isOpen, setOpen] = useState(false);
@@ -52,7 +53,10 @@ const CourseSingle = () => {
       <GeeksSEO title="Course Single | Geeks Nextjs Template" />
 
       {/* Page header */}
-      <section className="pt-lg-8 pb-lg-16 pt-8 pb-12 bg-primary">
+      <section
+        name="banner container"
+        className="pt-lg-8 pb-lg-16 pt-8 pb-12 bg-primary"
+      >
         <Container>
           <Row className="align-items-flex-end">
             <Col xl={7} lg={7} md={12} sm={12} className="mt-lg-12">
@@ -248,9 +252,7 @@ const CourseSingle = () => {
                   >
                     Get 800+hrs of full syllabus lectures with subscription
                   </Typography>
-                  <Button variant="contained" sx={{ mt: 2 }}>
-                    Get Subscription
-                  </Button>
+                  <Button className="mt-3">Get Subscription</Button>
                 </CardContent>
               </Card>
             </Col>

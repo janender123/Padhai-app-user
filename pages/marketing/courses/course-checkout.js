@@ -341,6 +341,20 @@ const CourseCheckout = () => {
             </div>
           </div>
         ))}
+        <div
+          style={{
+            marginTop: "20px",
+          }}
+        >
+          <Button
+            variant="primary"
+            style={{
+              padding: "10px 80px",
+            }}
+          >
+            Pay through EMI
+          </Button>
+        </div>
       </div>
     );
   };
@@ -496,17 +510,42 @@ const CourseCheckout = () => {
     <Fragment>
       {/* Geeks SEO settings  */}
       <GeeksSEO title="Course Checkout | Geeks Nextjs Template" />
-
-      {/* Page header */}
-      <PageHeading pagetitle="Checkout Page" />
-
       {/*  Content */}
       <section className="py-6">
         <Container>
           <Row>
-            <Col xl={8} lg={8} md={12} sm={12}>
+            <Col xl={8} lg={8} md={12} sm={12} style={{ marginBottom: "20px" }}>
+              <Card
+                sx={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "space-between",
+                  padding: "10px",
+                  marginBottom: "20px",
+                }}
+              >
+                <div style={{ display: "flex", alignItems: "center" }}>
+                  <div style={{ margin: "20px", color: "black" }}>
+                    <h2>Pandit Usha</h2>
+                    <div>panditusha@gmail.com</div>
+                    <span>Delhi</span>
+                  </div>
+                  <div style={{ marginLeft: "auto", marginRight: "20px" }}>
+                    <Image
+                      src="/images/png/j-icon.webp"
+                      alt="Profile Logo"
+                      style={{
+                        backgroundColor: "white",
+                        borderRadius: "50%",
+                        width: "65px",
+                        height: "65px",
+                      }}
+                    />
+                  </div>
+                </div>
+              </Card>
               {/*  Card */}
-              <Card className="mb-3 mb-lg-0">
+              <Card className="mb-3 mt-5 mb-lg-0">
                 {/*  Card header */}
                 <Card.Header>
                   <h3 className="mb-0">Payment Method</h3>
@@ -568,7 +607,29 @@ const CourseCheckout = () => {
             </Col>
             <Col lg={4} md={12} sm={12}>
               {/*  Card */}
-              <Card className="border-0 mb-3">
+              <Card className="border-0 mb-3 mb-lg-0">
+                {/*  Card body */}
+                <Card.Body>
+                  <h3 className="mb-2">Discount Codes</h3>
+                  <Form>
+                    <Form.Group
+                      className="input-group"
+                      controlId="discountcodes"
+                    >
+                      <Form.Control
+                        type="text"
+                        placeholder="Enter your code"
+                        required
+                      />
+                      <Button variant="secondary" id="couponCode">
+                        Apply
+                      </Button>
+                    </Form.Group>
+                  </Form>
+                </Card.Body>
+              </Card>
+              {/*  Card */}
+              <Card className="border-0 mb-3 mt-5">
                 {/*  Card body */}
                 <div className="p-5 text-center">
                   <Badge bg="warning">Selected Plan</Badge>
@@ -583,7 +644,7 @@ const CourseCheckout = () => {
                     </p>
                   </div>
                   <div className="d-flex justify-content-center">
-                    <span className="h3 mb-0 fw-bold text-primary">$</span>
+                    <span className="h3 mb-0 fw-bold text-primary">₹</span>
                     <div className="display-4 fw-bold text-primary">39</div>
                     <span className=" align-self-end mb-1">/Monthly</span>
                   </div>
@@ -645,28 +706,6 @@ const CourseCheckout = () => {
                     Change the Plan
                   </Link>
                 </div>
-              </Card>
-              {/*  Card */}
-              <Card className="border-0 mb-3 mb-lg-0">
-                {/*  Card body */}
-                <Card.Body>
-                  <h3 className="mb-2">Discount Codes</h3>
-                  <Form>
-                    <Form.Group
-                      className="input-group"
-                      controlId="discountcodes"
-                    >
-                      <Form.Control
-                        type="text"
-                        placeholder="Enter your code"
-                        required
-                      />
-                      <Button variant="secondary" id="couponCode">
-                        Apply
-                      </Button>
-                    </Form.Group>
-                  </Form>
-                </Card.Body>
               </Card>
             </Col>
           </Row>
