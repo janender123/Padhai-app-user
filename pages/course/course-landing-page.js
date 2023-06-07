@@ -34,6 +34,7 @@ import Pricing from "pages/marketing/pricing";
 import ReferralCard from "pages/marketing/referral";
 import Courses from "data/testimonials/Courses";
 import UpcomingCoursesCard from "widgets/testimonials/UpcomingCoursesCard";
+import CourseLandingPageBanner from "sub-components/landings/landing-courses/CourseLandingPageBanner";
 
 const useStyles = makeStyles((theme) => ({
   upcomingClassesContainer: {
@@ -119,7 +120,7 @@ const Home = () => {
       <div style={{ padding: isSmallScreen ? "10px" : "" }}>
         {/*  Page Content  */}
         <section name="banner">
-          <HeroTyped />
+          <CourseLandingPageBanner />
         </section>
         <section name="Features" className="py-3 py-lg-3 bg-white">
           <Container>
