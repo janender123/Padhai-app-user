@@ -123,8 +123,8 @@ const Home = () => {
           <CourseLandingPageBanner />
         </section>
         <section name="Features" className="py-3 py-lg-3 bg-white">
-          <Container>
-            <div className="py-5 py-lg-0 mb-10">
+          <div style={{ margin: "0 250px" }}>
+            <div className="py-9 py-lg-0 mt-5 mb-10">
               <h1
                 style={{ fontSize: "55px" }}
                 className="text-dark text-center display-4 fw-bold"
@@ -133,16 +133,29 @@ const Home = () => {
                 <span style={{ color: "#3c65c4" }}> choose us ?</span>
               </h1>
             </div>
-            <Row>
-              {CourseFeatures.slice(0, 4).map((item, index) => (
-                <Col lg={3} md={6} sm={12} key={index}>
-                  <FeaturesCard item={item} />
-                </Col>
-              ))}
-            </Row>
-          </Container>
+            <div
+              style={{
+                backgroundColor: "#1D397A",
+                borderRadius: "40px",
+                margin: "0px",
+                padding: "20px 40px",
+              }}
+            >
+              <Row>
+                {CourseFeatures.slice(0, 4).map((item, index) => (
+                  <Col lg={3} md={6} sm={12} key={index}>
+                    <FeaturesCard item={item} />
+                  </Col>
+                ))}
+              </Row>
+            </div>
+          </div>
         </section>
-        <section name="course-curriculum" className="py-8 py-lg-8 bg-light">
+        <section
+          name="course-curriculum"
+          style={{ backgroundColor: "#FFFBEB" }}
+          className="py-8 py-lg-8"
+        >
           <Container>
             <CourseCurriculum />
           </Container>

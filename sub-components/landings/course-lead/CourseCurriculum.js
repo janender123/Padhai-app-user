@@ -16,6 +16,7 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: "column",
   },
   tab: {
+    width: "300px",
     minWidth: 0,
     padding: theme.spacing(1),
     paddingRight: theme.spacing(2),
@@ -23,9 +24,8 @@ const useStyles = makeStyles((theme) => ({
     margin: "3px",
     fontWeight: "bold",
     color: "initial",
-    backgroundColor: "white",
-    border: "1px solid grey",
-    borderRadius: "5px",
+    backgroundColor: "#FFFFFF",
+    borderRadius: "15px",
     textAlign: "center",
     "&.Mui-selected": {
       backgroundColor: "#3c65c4 !important",
@@ -33,20 +33,23 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   accordions: {
+    marginLeft: "auto",
     marginTop: theme.spacing(2),
+    width: "95%",
   },
   accordion: {
-    margin: theme.spacing(1.5, 0),
-    minHeight: '100px',
+    margin: theme.spacing(1, 0),
+    minHeight: "50px",
+    borderRadius: "10px",
     height: "auto",
     "& .MuiAccordionSummary-root": {
-      borderRadius: 10,
+      borderRadius: "10px",
     },
     "& .MuiAccordionSummary-root.Mui-expanded": {
-      borderRadius: 10,
+      borderRadius: "10px",
     },
     "& .MuiAccordionSummary-content": {
-      marginTop: "32px",
+      marginTop: "12px",
       display: "flex",
       alignItems: "center",
       height: "100%",
@@ -169,137 +172,142 @@ export default function CourseCurriculum() {
   };
 
   return (
-    <div className={classes.root}>
+    <div className={classes.root} style={{ display: "flex" }}>
       <Tabs
         value={value}
         onChange={handleChange}
-        indicatorColor="transparent"
+        orientation="vertical"
+        variant="scrollable"
+        className={classes.tabs}
         aria-label="icon label tabs example"
       >
         <Tab
-          icon={
-            <Image
-              src="/images/course/course-curriculum-1.svg"
-              alt="My image"
-            />
-          }
           className={classes.tab}
           label={
-            <Typography
-              variant="h6"
-              style={{
-                fontWeight: "500",
-                textTransform: "capitalize",
-                color: "inherit",
-              }}
-            >
-              Introduction to programming
-            </Typography>
+            <div style={{ display: "flex", alignItems: "center" }}>
+              <Image
+                src="/images/course/course-curriculum-1.png"
+                alt="My image"
+                style={{ marginRight: "8px" }}
+              />
+              <span className="fw-bolder">Introduction to programming</span>
+            </div>
           }
           wrapped
+          style={{
+            flexDirection: "row",
+            backgroundColor: "white",
+            boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.1)",
+            justifyContent: "flex-start", // Align items to start
+          }}
         />
         <Tab
-          icon={
-            <Image
-              src="/images/course/course-curriculum-2.svg"
-              alt="My image"
-            />
-          }
           className={classes.tab}
           label={
-            <Typography
-              variant="h6"
-              style={{
-                fontWeight: "500",
-                textTransform: "capitalize",
-                color: "inherit",
-              }}
-            >
-              Data Structures & Algorithms
-            </Typography>
+            <div style={{ display: "flex", alignItems: "center" }}>
+              <Image
+                src="/images/course/course-curriculum-2.png"
+                alt="My image"
+                style={{ marginRight: "8px" }}
+              />
+              <span className="fw-bolder">Data Structures & Algorithms</span>
+            </div>
           }
           wrapped
+          style={{
+            flexDirection: "row",
+            backgroundColor: "white",
+            boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.1)",
+            justifyContent: "flex-start", // Align items to start
+          }}
         />
         <Tab
-          icon={
-            <Image
-              src="/images/course/course-curriculum-3.png"
-              alt="My image"
-            />
-          }
           className={classes.tab}
           label={
-            <Typography
-              variant="h6"
+            <div
               style={{
-                fontWeight: "500",
-                textTransform: "capitalize",
-                color: "inherit",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "flex-start",
               }}
             >
-              Special Features
-            </Typography>
+              <Image
+                src="/images/course/course-curriculum-4.png"
+                alt="My image"
+                style={{ marginRight: "8px" }}
+              />
+              <span className="fw-bolder">Special Features of this course</span>
+            </div>
           }
           wrapped
+          style={{
+            flexDirection: "row",
+            backgroundColor: "white",
+            boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.1)",
+            justifyContent: "flex-start", // Align items to start
+          }}
         />
       </Tabs>
-      <TabPanel value={value} index={0}>
-        <div className={classes.accordions}>
-          {tab1Accordions.map((accordion, index) => (
-            <AccordionPanel
-              key={index}
-              title={accordion.title}
-              expanded={accordion.expanded}
-              onChange={() => {
-                const updatedAccordions = [...tab1Accordions];
-                updatedAccordions[index].expanded =
-                  !updatedAccordions[index].expanded;
-                setTab1Accordions(updatedAccordions);
-              }}
-            >
-              {accordion.content}
-            </AccordionPanel>
-          ))}
-        </div>
-      </TabPanel>
-      <TabPanel value={value} index={1}>
-        <div className={classes.accordions}>
-          {tab2Accordions.map((accordion, index) => (
-            <AccordionPanel
-              key={index}
-              title={accordion.title}
-              expanded={accordion.expanded}
-              onChange={() => {
-                const updatedAccordions = [...tab2Accordions];
-                updatedAccordions[index].expanded =
-                  !updatedAccordions[index].expanded;
-                setTab2Accordions(updatedAccordions);
-              }}
-            >
-              {accordion.content}
-            </AccordionPanel>
-          ))}
-        </div>
-      </TabPanel>
-      <TabPanel value={value} index={2}>
-        <div className={classes.accordions}>
-          {tab3Accordions.map((accordion, index) => (
-            <AccordionPanel
-              key={index}
-              title={accordion.title}
-              expanded={accordion.expanded}
-              onChange={() => {
-                const updatedAccordions = [...tab3Accordions];
-                updatedAccordions[index].expanded =
-                  !updatedAccordions[index].expanded;
-                setTab3Accordions(updatedAccordions);
-              }}
-            >
-              {accordion.content}
-            </AccordionPanel>
-          ))}
-        </div>
-      </TabPanel>
+
+      <div style={{ flex: 1 }}>
+        <TabPanel value={value} index={0}>
+          <div className={classes.accordions}>
+            {tab1Accordions.map((accordion, index) => (
+              <AccordionPanel
+                key={index}
+                title={accordion.title}
+                expanded={accordion.expanded}
+                onChange={() => {
+                  const updatedAccordions = [...tab1Accordions];
+                  updatedAccordions[index].expanded =
+                    !updatedAccordions[index].expanded;
+                  setTab1Accordions(updatedAccordions);
+                }}
+              >
+                {accordion.content}
+              </AccordionPanel>
+            ))}
+          </div>
+        </TabPanel>
+        <TabPanel value={value} index={1}>
+          <div className={classes.accordions}>
+            {tab2Accordions.map((accordion, index) => (
+              <AccordionPanel
+                key={index}
+                title={accordion.title}
+                expanded={accordion.expanded}
+                onChange={() => {
+                  const updatedAccordions = [...tab2Accordions];
+                  updatedAccordions[index].expanded =
+                    !updatedAccordions[index].expanded;
+                  setTab2Accordions(updatedAccordions);
+                }}
+              >
+                {accordion.content}
+              </AccordionPanel>
+            ))}
+          </div>
+        </TabPanel>
+        <TabPanel value={value} index={2}>
+          <div className={classes.accordions}>
+            {tab3Accordions.map((accordion, index) => (
+              <AccordionPanel
+                key={index}
+                title={accordion.title}
+                expanded={accordion.expanded}
+                onChange={() => {
+                  const updatedAccordions = [...tab3Accordions];
+                  updatedAccordions[index].expanded =
+                    !updatedAccordions[index].expanded;
+                  setTab3Accordions(updatedAccordions);
+                }}
+              >
+                {accordion.content}
+              </AccordionPanel>
+            ))}
+          </div>
+        </TabPanel>
+      </div>
       <div className={classes.progress}>
         <LinearProgress
           variant="determinate"

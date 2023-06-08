@@ -375,9 +375,8 @@ const CourseCheckout = () => {
       <Fragment>
         <Row style={{ display: "flex", flexDirection: "row" }}>
           {NetBankingBanks.slice(0, 4).map((bank) => (
-            <Col md={6} sm={12}>
+            <Col key={bank.id} md={6} sm={12}>
               <div
-                key={bank.id}
                 style={{
                   border:
                     selectedNetBank === bank.id
@@ -392,7 +391,12 @@ const CourseCheckout = () => {
                 }}
                 onClick={() => handleNetBankSelection(bank.id)}
               >
-                <Image src={bank.src} height="20px" width="20px" />
+                <Image
+                  src={bank.src}
+                  alt="bank-image"
+                  height="20px"
+                  width="20px"
+                />
                 <div style={{ flex: 1, color: "black", marginLeft: "15px" }}>
                   {bank.name}
                 </div>
@@ -455,9 +459,8 @@ const CourseCheckout = () => {
       <Fragment>
         <Row style={{ display: "flex", flexDirection: "row" }}>
           {Wallets.map((wallet) => (
-            <Col md={6} sm={12}>
+            <Col key={wallet.id} md={6} sm={12}>
               <div
-                key={wallet.id}
                 style={{
                   border:
                     selectedWallet === wallet.id
@@ -472,7 +475,12 @@ const CourseCheckout = () => {
                 }}
                 onClick={() => handleWalletSelection(wallet.id)}
               >
-                <Image src={wallet.src} height="20px" width="20px" />
+                <Image
+                  src={wallet.src}
+                  alt="wallet-src"
+                  height="20px"
+                  width="20px"
+                />
                 <div style={{ flex: 1, color: "black", marginLeft: "15px" }}>
                   {wallet.name}
                 </div>

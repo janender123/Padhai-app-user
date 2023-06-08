@@ -2,7 +2,7 @@ export const CourseFeatures = [
   {
     id: 1,
     name: "India's top educators",
-    image: "/images/pattern/features-1.png",
+    image: "/images/pattern/features-4.png",
     content: "Learn with the best educators for online IIT JEE preparation",
     rating: 5.0,
     color: "primary",
@@ -10,7 +10,7 @@ export const CourseFeatures = [
   {
     id: 2,
     name: "Full syllabus coverage",
-    image: "/images/pattern/features-2.png",
+    image: "/images/pattern/features-1.png",
     content: "Cover your entire syllabus from all your IIT JEE subjects",
     rating: 5.0,
     color: "info",
@@ -18,7 +18,7 @@ export const CourseFeatures = [
   {
     id: 3,
     name: "Best-in-class learning experience",
-    image: "/images/pattern/features-3.png",
+    image: "/images/pattern/features-2.png",
     content:
       "Live classes, practice questions, mock tests, doubt solving and much more",
     rating: 5.0,
@@ -29,7 +29,7 @@ export const CourseFeatures = [
     id: 4,
     name: "1:1 Live mentorship & more",
     designation: "Web Developer,UK",
-    image: "/images/pattern/features-4.png",
+    image: "/images/pattern/features-3.png",
     content:
       "Personalised online mentorship to help keep your IIT JEE preparation on track",
     rating: 4.5,
