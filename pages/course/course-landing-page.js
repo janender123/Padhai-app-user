@@ -41,7 +41,6 @@ const useStyles = makeStyles((theme) => ({
     position: "relative",
     maxWidth: "100%",
     overflowX: "auto",
-    whiteSpace: "nowrap",
     "&::-webkit-scrollbar": {
       display: "none",
     },
@@ -154,13 +153,19 @@ const Home = () => {
         <section
           name="course-curriculum"
           style={{ backgroundColor: "#FFFBEB" }}
-          className="py-8 py-lg-8"
+          className="py-12 py-lg-12"
         >
-          <Container>
+          <div className="mx-23">
+            <h1
+              style={{ whiteSpace: "pre-wrap", fontSize: "55px" }}
+              className="text-dark text-center display-4 fw-bold"
+            >
+              Course Curriculum
+            </h1>
             <CourseCurriculum />
-          </Container>
+          </div>
         </section>
-        <section name="Upcoming-classes" className="py-8 py-lg-8 bg-light">
+        <section name="Upcoming-classes" className="py-12 py-lg-12 bg-light">
           <Container>
             <div className={classes.upcomingClassesContainer}>
               <div
@@ -221,7 +226,8 @@ const Home = () => {
             </div>
           </Container>
         </section>
-        <section name="Upcoming-live-classes" className="py-8 py-lg-8bg-light">
+
+        <section name="Upcoming-live-classes" className="py-8 py-lg-8 bg-light">
           <Container>
             <div className={classes.upcomingClassesContainer}>
               <div

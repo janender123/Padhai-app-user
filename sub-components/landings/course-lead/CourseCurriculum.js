@@ -13,10 +13,19 @@ import { Typography } from "@mui/material";
 const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
-    flexDirection: "column",
+    flexDirection: "row", // Change the direction to row
+    justifyContent: "space-between", // Add space between the panels
+  },
+  tabContainer: {
+    flex: 3, // Occupy 3 parts of the column
+    paddingRight: theme.spacing(2),
+  },
+  accordionContainer: {
+    flex: 9, // Occupy 9 parts of the column
+    paddingLeft: theme.spacing(2),
   },
   tab: {
-    width: "300px",
+    width: "90%",
     minWidth: 0,
     padding: theme.spacing(1),
     paddingRight: theme.spacing(2),
@@ -31,11 +40,18 @@ const useStyles = makeStyles((theme) => ({
       backgroundColor: "#3c65c4 !important",
       color: "white !important",
     },
+    "&:hover": {
+      backgroundColor: "#FFFFFF",
+    },
+    "&.Mui-selected:hover": {
+      backgroundColor: "#3c65c4 !important",
+      color: "white !important",
+    },
   },
   accordions: {
     marginLeft: "auto",
     marginTop: theme.spacing(2),
-    width: "95%",
+    width: "98%",
   },
   accordion: {
     margin: theme.spacing(1, 0),
@@ -179,6 +195,9 @@ export default function CourseCurriculum() {
         orientation="vertical"
         variant="scrollable"
         className={classes.tabs}
+        classes={{
+          indicator: classes.indicator, // Apply the indicator class to the Tabs component
+        }}
         aria-label="icon label tabs example"
       >
         <Tab
