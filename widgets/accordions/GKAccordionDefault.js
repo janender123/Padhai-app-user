@@ -42,8 +42,8 @@ const GKAccordionDefault = ({ accordionItems, itemClass }) => {
               borderRadius: "30px",
               width: "25px",
               height: "25px",
-              display: " inline-flex",
-              justifyContent: " center",
+              display: "inline-flex",
+              justifyContent: "center",
               alignItems: "center",
               margin: "3px",
               marginRight: "10px",
@@ -52,6 +52,19 @@ const GKAccordionDefault = ({ accordionItems, itemClass }) => {
             {children.order}
           </div>
           <div className="me-auto">{children.title}</div>
+
+          {children.hasOwnProperty("completed") && (
+            <div>
+              <ProgressBar
+                variant="success"
+                className="mb-2 progress"
+                now={children.completed}
+                style={{ height: "6px" }}
+              />
+              <small>{children.completed}% Completed</small>
+            </div>
+          )}
+
           <span className="chevron-arrow ms-4">
             <i className="fe fe-chevron-down fs-4"></i>
           </span>
@@ -103,24 +116,6 @@ const GKAccordionDefault = ({ accordionItems, itemClass }) => {
                       >
                         Lessons
                       </Typography>
-                      <ListGroup.Item
-                        style={{
-                          justifyContent: "space-between",
-                          border: "1px solid white",
-                          borderRadius: "10px",
-                          boxShadow: "0px -1px 7px 0px",
-                          boxSizing: "border-box",
-                          marginBottom: "10px",
-                        }}
-                      >
-                        <ProgressBar
-                          variant="success"
-                          className="mb-2 progress"
-                          now={item.completed}
-                          style={{ height: "6px" }}
-                        />
-                        <small>{item.completed}% Completed</small>
-                      </ListGroup.Item>
                       {item.topics.map((subitem, subindex) => (
                         <ListGroup.Item
                           key={subindex}

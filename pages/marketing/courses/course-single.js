@@ -35,7 +35,14 @@ import {
 // import data files
 import { CourseIndex } from "data/courses/CourseIndexData";
 import { AllCoursesData } from "data/slider/AllCoursesData";
-import { CardContent, CardMedia, Typography } from "@mui/material";
+import {
+  Box,
+  CardContent,
+  CardMedia,
+  Divider,
+  Rating,
+  Typography,
+} from "@mui/material";
 import { useRouter } from "next/router";
 import { Button } from "react-bootstrap";
 
@@ -49,18 +56,19 @@ const CourseSingle = () => {
   }
   return (
     <Fragment>
-      {/* Geeks SEO settings  */}
-      <GeeksSEO title="Course Single | Geeks Nextjs Template" />
-
       {/* Page header */}
       <section
         name="banner container"
-        className="pt-lg-8 pb-lg-16 pt-8 pb-12 bg-primary"
+        className="py-16 py-lg-16 bg-primary"
+        style={{
+          backgroundImage: "url('/images/icons/course-single-background.png')",
+          backgroundSize: "102% 110%",
+        }}
       >
         <Container>
           <Row className="align-items-flex-end">
-            <Col xl={7} lg={7} md={12} sm={12} className="mt-lg-12">
-              <div className="d-flex align-items-center">
+            <Col xl={7} lg={7} md={12} sm={12} xs={12} className="mt-lg-n2">
+              <div className="d-flex align-items-center mt-10">
                 <Link
                   href="#"
                   onClick={handleBackClick}
@@ -92,84 +100,111 @@ const CourseSingle = () => {
               </div>
               <div className="mt-5">
                 <h1 className="text-white display-4 fw-semi-bold">
-                  Getting Started with JavaScript
+                  Getting Started with
+                  <br /> <span style={{ color: "#FFE500" }}>JavaScript</span>
                 </h1>
                 <p className="text-white mb-6 lead">
-                  JavaScript is the popular programming language which powers
-                  web pages and web applications. This course will get you
-                  started coding in JavaScript.
+                  JavaScript is the popular programming language which <br />{" "}
+                  powers web pages and web applications. This course will <br />{" "}
+                  get you started coding in JavaScript.
+                  <br />
+                  <Button
+                    style={{
+                      backgroundColor: "#28CE8E",
+                      border: "0",
+                      marginTop: "10px",
+                    }}
+                  >
+                    Get Started
+                  </Button>
                 </p>
               </div>
+              <Box display="flex" alignItems="center" className="mt-10">
+                <Box
+                  sx={{
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                  }}
+                >
+                  <Typography variant="h5" sx={{ fontWeight: "bold" }}>
+                    11,604
+                  </Typography>
+                  <Typography variant="body2" sx={{ fontWeight: "bold" }}>
+                    Students
+                  </Typography>
+                </Box>
+                <Divider
+                  orientation="vertical"
+                  flexItem
+                  sx={{ margin: "0 22px" }}
+                />
+                <Box
+                  sx={{
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                  }}
+                >
+                  <Typography variant="h5" sx={{ fontWeight: "bold" }}>
+                    32
+                  </Typography>
+                  <Typography variant="body2" sx={{ fontWeight: "bold" }}>
+                    Courses
+                  </Typography>
+                </Box>
+                <Divider
+                  orientation="vertical"
+                  flexItem
+                  sx={{ margin: "0 22px" }}
+                />
+                <Box
+                  sx={{
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                  }}
+                >
+                  <Typography variant="h5" sx={{ fontWeight: "bold" }}>
+                    12,230
+                  </Typography>
+                  <Typography variant="body2" sx={{ fontWeight: "bold" }}>
+                    Reviews
+                  </Typography>
+                </Box>
+                <Divider
+                  orientation="vertical"
+                  flexItem
+                  sx={{ margin: "0 22px" }}
+                />
+                <Box
+                  sx={{
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                  }}
+                >
+                  <Typography variant="h6" sx={{ fontWeight: "bold" }}>
+                    4.5 <Rating value={4.5} precision={0.5} readOnly />
+                  </Typography>
+                  <Typography variant="body2" sx={{ fontWeight: "bold" }}>
+                    Instructor Rating
+                  </Typography>{" "}
+                </Box>
+              </Box>
             </Col>
-            <Col lg={5} md={12} sm={12} className="mt-lg-10">
-              <Card>
-                {/* Card body */}
-                <Card.Body>
-                  <div className="d-flex align-items-center">
-                    <div className="position-relative">
-                      <Image
-                        src="/images/avatar/avatar-1.jpg"
-                        alt=""
-                        className="rounded-circle avatar-xl"
-                      />
-                      <Link
-                        href="#"
-                        className="position-absolute mt-2 ms-n3"
-                        data-bs-toggle="tooltip"
-                        data-placement="top"
-                        title="Verifed"
-                      >
-                        <Image
-                          src="/images/svg/checked-mark.svg"
-                          alt=""
-                          height="30"
-                          width="30"
-                        />
-                      </Link>
-                    </div>
-                    <div className="ms-4">
-                      <h4 className="mb-0">Jenny Wilson</h4>
-                      <p className="mb-1 fs-6">Front-end Developer, Designer</p>
-                      <span className="fs-6">
-                        <span className="text-warning">4.5</span>
-                        <span className="mdi mdi-star text-warning me-2"></span>
-                        Instructor Rating
-                      </span>
-                    </div>
-                  </div>
-                  <Row className="border-top mt-3 border-bottom mb-3 g-0">
-                    <Col>
-                      <div className="pe-1 ps-2 py-3">
-                        <h5 className="mb-0">11,604</h5>
-                        <span>Students</span>
-                      </div>
-                    </Col>
-                    <Col className="border-start">
-                      <div className="pe-1 ps-3 py-3">
-                        <h5 className="mb-0">32</h5>
-                        <span>Courses</span>
-                      </div>
-                    </Col>
-                    <Col className="border-start">
-                      <div className="pe-1 ps-3 py-3">
-                        <h5 className="mb-0">12,230</h5>
-                        <span>Reviews</span>
-                      </div>
-                    </Col>
-                  </Row>
-                  <p>
-                    I am an Innovation designer focussing on UX/UI based in
-                    Berlin. As a creative resident at Figma explored the city of
-                    the future and how new technologies.
-                  </p>
-                  <Link
-                    href="/marketing/instructor/edit-profile/"
-                    className="btn btn-outline-secondary btn-sm"
-                  >
-                    View Details
-                  </Link>
-                </Card.Body>
-              </Card>
+            <Col
+              xl={5}
+              lg={5}
+              md={12}
+              sm={12}
+              xs={12}
+              className="mt-sm-0 mt-md-0 mt-lg-n10 mt-xl-n10"
+            >
+              <Image
+                src="/images/icons/course-single-instructor.png"
+                alt="instructor-image"
+              />
             </Col>
           </Row>
         </Container>

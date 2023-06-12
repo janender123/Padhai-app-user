@@ -180,37 +180,30 @@ const Home = () => {
                   className="text-dark text-center display-4 fw-bold"
                 >
                   Upcoming Classes
-                </h1>
+                </h1>{" "}
                 <div style={{ display: "flex", alignItems: "center" }}>
-                  <IconButton
-                    className={`${classes.arrowButton} ${classes.arrowLeft}`}
-                    onClick={handleLeftArrowClickClass}
+                  <Image
+                    src="/images/icons/LeftArrow.png"
                     style={{
-                      backgroundColor: "white",
-                      border: "1px solid grey",
-                      borderRadius: "4px",
-                      marginRight: "10px",
                       opacity: startClassIndex == 0 ? 0.5 : 1,
+                      cursor: "pointer",
                     }}
-                  >
-                    <KeyboardArrowLeft />
-                  </IconButton>
-                  <IconButton
-                    className={`${classes.arrowButton} ${classes.arrowRight}`}
+                    onClick={handleLeftArrowClickClass}
+                    alt="left arrow"
+                  />
+                  <Image
+                    src="/images/icons/RightArrow.png"
                     onClick={handleRightArrowClickClass}
+                    alt="right arrow"
                     style={{
-                      backgroundColor: "white",
-                      border: "1px solid grey",
-                      borderRadius: "4px",
                       opacity:
                         startClassIndex + classesToShow >=
                         UpcomingClasses.length
                           ? 0.5
                           : 1,
+                      cursor: "pointer",
                     }}
-                  >
-                    <KeyboardArrowRight />
-                  </IconButton>
+                  />
                 </div>
               </div>
               <Grid container spacing={2}>
@@ -244,35 +237,28 @@ const Home = () => {
                   Upcoming Live Classes
                 </h1>
                 <div style={{ display: "flex", alignItems: "center" }}>
-                  <IconButton
-                    className={`${classes.arrowButton} ${classes.arrowLeft}`}
-                    onClick={handleLeftArrowClickLiveClass}
+                  <Image
+                    src="/images/icons/LeftArrow.png"
                     style={{
-                      backgroundColor: "white",
-                      border: "1px solid grey",
-                      borderRadius: "4px",
-                      marginRight: "10px",
                       opacity: startLiveClassIndex == 0 ? 0.5 : 1,
+                      cursor: "pointer",
                     }}
-                  >
-                    <KeyboardArrowLeft />
-                  </IconButton>
-                  <IconButton
-                    className={`${classes.arrowButton} ${classes.arrowRight}`}
+                    onClick={handleLeftArrowClickLiveClass}
+                    alt="left arrow"
+                  />
+                  <Image
+                    src="/images/icons/RightArrow.png"
                     onClick={handleRightArrowClickLiveClass}
+                    alt="right arrow"
                     style={{
-                      backgroundColor: "white",
-                      border: "1px solid grey",
-                      borderRadius: "4px",
                       opacity:
                         startLiveClassIndex + classesToShow >=
                         UpcomingClasses.length
                           ? 0.5
                           : 1,
+                      cursor: "pointer",
                     }}
-                  >
-                    <KeyboardArrowRight />
-                  </IconButton>
+                  />
                 </div>
               </div>
               <Grid container spacing={2}>
@@ -313,8 +299,8 @@ const Home = () => {
                     onClick={handleLeftArrowClickCourses}
                     style={{
                       backgroundColor: "white",
-                      border: "1px solid grey",
-                      borderRadius: "4px",
+                      border: "1px solid transparent",
+                      borderRadius: "50%",
                       marginRight: "10px",
                       opacity: startCourseIndex == 0 ? 0.5 : 1,
                     }}
@@ -326,8 +312,8 @@ const Home = () => {
                     onClick={handleRightArrowClickCourses}
                     style={{
                       backgroundColor: "white",
-                      border: "1px solid grey",
-                      borderRadius: "4px",
+                      border: "1px solid transparent",
+                      borderRadius: "50%",
                       opacity:
                         startCourseIndex + CoursesToShow >= Courses.length
                           ? 0.5
