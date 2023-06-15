@@ -36,6 +36,7 @@ import { CourseIndex } from "data/courses/CourseIndexData";
 import useMounted from "hooks/useMounted";
 import { useRouter } from "next/router";
 import { CardContent, CardMedia, Typography } from "@mui/material";
+import CourseBundleTeachers from "sub-components/landings/home-academy/CourseBundleTeachers";
 
 const CourseSingle2 = () => {
   const hasMounted = useMounted();
@@ -51,12 +52,24 @@ const CourseSingle2 = () => {
 
       <section
         name="banner container"
-        className="pt-lg-8 pb-lg-16 pt-8 pb-12 bg-primary"
+        className="pt-lg-8 pb-lg-16 pt-8 pb-12 "
+        style={{
+          backgroundImage: "url('/images/icons/course-single2-background.png')",
+          backgroundSize: "100% 100%",
+        }}
       >
         <Container>
-          <Row className="align-items-flex-end">
-            <Col lg={5} md={12} sm={12} className="mt-lg-10">
-              <div className="d-flex align-items-center mb-5">
+          <Row
+            className="align-items-flex-end"
+            style={{
+              backgroundImage:
+                "url('/images/icons/course-single2-innerbackground.png')",
+              backgroundSize: "100% 100%",
+              /* Additional background properties can be added here */
+            }}
+          >
+            <Col lg={6} md={12} sm={12} className="mt-lg-12 px-10">
+              <div className="d-flex align-items-center mb-5 ">
                 <Link
                   href="#"
                   onClick={handleBackClick}
@@ -86,19 +99,9 @@ const CourseSingle2 = () => {
                   <i className="fe fe-speaker text-white-50"></i> Hinglish
                 </span>
               </div>
-              <Image
-                src="/images/png/course-bundle-image.avif"
-                alt="course-bundle-image"
-                width="85%"
-                style={{
-                  borderRadius: "10px",
-                }}
-              />
-            </Col>
-            <Col xl={7} lg={7} md={12} sm={12} className="mt-lg-12">
               <div className="mt-5">
                 <h1 className="text-white display-4 fw-semi-bold">
-                  Surya Batch for IIT JEE 2024
+                  Surya Batch for <br /> IIT JEE 2024
                 </h1>
                 <h4 className="text-white fw-semi-bold">
                   Chandan Roy, Suresh Chand Meena and 1 more
@@ -110,15 +113,28 @@ const CourseSingle2 = () => {
                   }}
                 >
                   Enrolling in this batch will help you with end-to-end
-                  preparation for JEE Main and JEE Advanced Exams. In this
-                  batch, Suresh Chand Meena Sir, Manoj Kumar Jha Sir, Chandan
-                  Roy Sir will cover the entire course of Mathematics, Physics,
-                  Physical Chemistry, Inorganic Chemistry, Organic Chemistry.
-                  The course will be completed in 07* Months. It will be covered
-                  in Hinglish and the notes will be provided in English in the
-                  discussion forum
+                  preparation for <br />
+                  JEE Main and JEE Advanced Exams. In this batch, Suresh Chand{" "}
+                  <br /> Meena Sir, Manoj Kumar Jha Sir, Chandan Roy Sir will
+                  cover the entire <br />
+                  course of Mathematics, Physics, Physical Chemistry, Inorganic
+                  Chemistry,
+                  <br /> Organic Chemistry. The course will be completed in 07*
+                  Months. It will be <br /> covered in Hinglish and the notes
+                  will be provided in English in the discussion <br /> forum
                 </p>
               </div>
+            </Col>
+            <Col xl={6.5} lg={6} md={12} sm={12} className="mt-lg-n6">
+              <Image
+                src="/images/icons/course-single2-instructor.png"
+                alt="course-bundle-image"
+                width="102%"
+                height="108%"
+                style={{
+                  borderRadius: "10px",
+                }}
+              />
             </Col>
           </Row>
         </Container>
@@ -133,7 +149,7 @@ const CourseSingle2 = () => {
                 <Tab.Container defaultActiveKey="description">
                   <Card className="mb-5">
                     {/*  Card body  */}
-                    <Card.Body>
+                    <Card.Body style={{ backgroundColor: "#FFF0C8" }}>
                       <div className="d-flex justify-content-between align-items-center">
                         <h1 className="fw-semi-bold mb-2">
                           Getting Started with JavaScript
@@ -161,43 +177,15 @@ const CourseSingle2 = () => {
                           <span>Enrolled</span>
                         </span>
                       </div>
-                      <div className="d-flex justify-content-between">
-                        <div className="d-flex align-items-center cursor-pointer">
-                          <Image
-                            src="/images/avatar/avatar-1.jpg"
-                            className="rounded-circle avatar-md"
-                            alt=""
-                          />
-                          <div className="ms-2 lh-1">
-                            <h4 className="mb-1">Mohan Biswas</h4>
-                            <p className="fs-6 mb-0">@mohan</p>
-                          </div>
-                        </div>
-                        <div className="d-flex align-items-center cursor-pointer">
-                          <Image
-                            src="/images/avatar/avatar-2.jpg"
-                            className="rounded-circle avatar-md"
-                            alt=""
-                          />
-                          <div className="ms-2 lh-1">
-                            <h4 className="mb-1">Kiran Sharma</h4>
-                            <p className="fs-6 mb-0">@kiran</p>
-                          </div>
-                        </div>
-                        <div className="d-flex align-items-center cursor-pointer">
-                          <Image
-                            src="/images/avatar/avatar-3.jpg"
-                            className="rounded-circle avatar-md"
-                            alt=""
-                          />
-                          <div className="ms-2 lh-1">
-                            <h4 className="mb-1">Mohini Yadav</h4>
-                            <p className="fs-6 mb-0">@mohini</p>
-                          </div>
-                        </div>
+                      <div  >
+                        <CourseBundleTeachers />
                       </div>
                     </Card.Body>
                     {/*  Nav tabs  */}
+                  </Card>
+                  {/*  Card  */}
+                  <Card className="rounded-3">
+                    {/*  Card body  */}
                     <Nav className="nav-lt-tab">
                       {["Description", "FAQ"].map((item, index) => (
                         <Nav.Item key={index}>
@@ -211,10 +199,6 @@ const CourseSingle2 = () => {
                         </Nav.Item>
                       ))}
                     </Nav>
-                  </Card>
-                  {/*  Card  */}
-                  <Card className="rounded-3">
-                    {/*  Card body  */}
                     <Card.Body className="p-0">
                       <Tab.Content>
                         <Tab.Pane eventKey="description" className="pb-4 p-4">
