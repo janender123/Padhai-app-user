@@ -211,7 +211,7 @@ const DialogBoxForCourse = () => {
         variant="outline-primary"
         id="explore-button"
         style={{
-          marginRight: "40px",
+          marginRight: "25px",
           marginLeft: "10px",
         }}
       >

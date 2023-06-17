@@ -781,6 +781,147 @@ const NavbarLandingPageMenu = [
       },
     ],
   },
+  {
+    id: uuid(),
+    menuitem: "Browse",
+    link: "#",
+    children: [
+      {
+        id: uuid(),
+        menuitem: "Web Development",
+        link: "#",
+        children: [
+          {
+            id: uuid(),
+            menuitem: "Bootstrap",
+            link: "/marketing/course-category",
+          },
+          {
+            id: uuid(),
+            menuitem: "React",
+            link: "/marketing/course-category",
+          },
+          {
+            id: uuid(),
+            menuitem: "GraphQl",
+            link: "/marketing/course-category",
+          },
+          {
+            id: uuid(),
+            menuitem: "Gatsby",
+            link: "/marketing/course-category",
+          },
+          {
+            id: uuid(),
+            menuitem: "Grunt",
+            link: "/marketing/course-category",
+          },
+          {
+            id: uuid(),
+            menuitem: "Svelte",
+            link: "/marketing/course-category",
+          },
+          {
+            id: uuid(),
+            menuitem: "Meteor",
+            link: "/marketing/course-category",
+          },
+          {
+            id: uuid(),
+            menuitem: "HTML5",
+            link: "/marketing/course-category",
+          },
+          {
+            id: uuid(),
+            menuitem: "Angular",
+            link: "/marketing/course-category",
+          },
+        ],
+      },
+      {
+        id: uuid(),
+        menuitem: "Design",
+        link: "#",
+        children: [
+          {
+            id: uuid(),
+            menuitem: "Graphic Design",
+            link: "/marketing/course-category",
+          },
+          {
+            id: uuid(),
+            menuitem: "Illustrator",
+            link: "/marketing/course-category",
+          },
+          {
+            id: uuid(),
+            menuitem: "UX / UI Design",
+            link: "/marketing/course-category",
+          },
+          {
+            id: uuid(),
+            menuitem: "Figma Design",
+            link: "/marketing/course-category",
+          },
+          {
+            id: uuid(),
+            menuitem: "Adobe XD",
+            link: "/marketing/course-category",
+          },
+          {
+            id: uuid(),
+            menuitem: "Sketch",
+            link: "/marketing/course-category",
+          },
+          {
+            id: uuid(),
+            menuitem: "Icon Design",
+            link: "/marketing/course-category",
+          },
+          {
+            id: uuid(),
+            menuitem: "Photoshop",
+            link: "/marketing/course-category",
+          },
+        ],
+      },
+      {
+        id: uuid(),
+        menuitem: "Mobile App",
+        link: "/marketing/course-category",
+      },
+      {
+        id: uuid(),
+        menuitem: "IT Software",
+        link: "/marketing/course-category",
+      },
+      {
+        id: uuid(),
+        menuitem: "Marketing",
+        link: "/marketing/course-category",
+      },
+      {
+        id: uuid(),
+        menuitem: "Music",
+        link: "/marketing/course-category",
+      },
+      {
+        id: uuid(),
+        menuitem: "Life Style",
+        link: "/marketing/course-category",
+      },
+      {
+        id: uuid(),
+        menuitem: "Business",
+        link: "/marketing/course-category",
+      },
+      {
+        id: uuid(),
+        menuitem: "Photography",
+        link: "/marketing/course-category",
+      },
+    ],
+  },
 ];
 export default NavbarDefault;
 export { NavbarLandingPageMenu };

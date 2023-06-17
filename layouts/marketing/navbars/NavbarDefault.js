@@ -63,9 +63,12 @@ const NavbarDefault = ({ headerstyle, login }) => {
             <span className="icon-bar middle-bar"></span>
             <span className="icon-bar bottom-bar"></span>
           </Navbar.Toggle>
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav>
-              <DialogBoxForCourse />
+          <Navbar.Collapse
+            id="basic-navbar-nav"
+            className="justify-content-center"
+          >
+            <DialogBoxForCourse />
+            <Nav className="d-flex justify-content-center mx-23">
               {NavbarDefaultRoutes.map((item, index) => {
                 if (item.children === undefined) {
                   return (
@@ -87,59 +90,57 @@ const NavbarDefault = ({ headerstyle, login }) => {
               })}
               {hasMounted ? <DocumentMenu /> : null}
             </Nav>
-            {/* Search Form */}
-            <Form className="mt-3 mt-lg-0 ms-lg-3 d-flex align-items-center">
-              <span className="position-absolute ps-3 search-icon">
-                <i className="fe fe-search"></i>
-              </span>
-              <Form.Control
-                type="Search"
-                id="formSearch"
-                className="ps-6"
-                placeholder="Search Courses"
-              />
-            </Form>
-            {/* Right side quick / shortcut menu  */}
 
-            <div className="ms-auto d-flex align-items-center">
-              <Nav className="navbar-nav navbar-right-wrap ms-auto d-flex nav-top-wrap">
-                <span
-                  className={
-                    login
-                      ? "ms-auto mt-3 mt-lg-0 d-none"
-                      : "ms-auto mt-3 mt-lg-0"
-                  }
-                >
-                  <Nav.Link
-                    href="#"
-                    bsPrefix="btn"
-                    className="btn btn-white shadow-sm me-2"
-                  >
-                    Sign In
-                  </Nav.Link>
-                  <Nav.Link
-                    href="#"
-                    bsPrefix="btn"
-                    className="btn btn-primary shadow-sm"
-                  >
-                    Sign Up
-                  </Nav.Link>
+            {/* Search Form */}
+
+            {/* Right side quick / shortcut menu  */}
+            <Nav className="navbar-nav navbar-right-wrap ms-auto d-flex nav-top-wrap">
+              <Form className="mt-3 mt-lg-0 ms-lg-3 d-flex align-items-center">
+                <span className="position-absolute ps-3 search-icon">
+                  <i className="fe fe-search"></i>
                 </span>
-                {hasMounted ? (
-                  <span
-                    className={`${
-                      login
-                        ? isDesktop || isLaptop
-                          ? "d-flex"
-                          : "d-none"
+                <Form.Control
+                  type="Search"
+                  id="formSearch"
+                  className="ps-6"
+                  placeholder="Search Courses"
+                  style={{ borderRadius: "20px", backgroundColor: "#F0F0F0" }}
+                />
+              </Form>
+              <span
+                className={
+                  login ? "ms-auto mt-3 mt-lg-0 d-none" : "ms-auto mt-3 mt-lg-0"
+                }
+              >
+                <Nav.Link
+                  href="#"
+                  bsPrefix="btn"
+                  className="btn btn-white shadow-sm me-2"
+                >
+                  Sign In
+                </Nav.Link>
+                <Nav.Link
+                  href="#"
+                  bsPrefix="btn"
+                  className="btn btn-primary shadow-sm"
+                >
+                  Sign Up
+                </Nav.Link>
+              </span>
+              {hasMounted ? (
+                <span
+                  className={`${
+                    login
+                      ? isDesktop || isLaptop
+                        ? "d-flex"
                         : "d-none"
-                    }`}
-                  >
-                    <QuickMenu />
-                  </span>
-                ) : null}
-              </Nav>
-            </div>
+                      : "d-none"
+                  }`}
+                >
+                  <QuickMenu />
+                </span>
+              ) : null}
+            </Nav>
             {/* end of right side quick / shortcut menu  */}
           </Navbar.Collapse>
         </Container>

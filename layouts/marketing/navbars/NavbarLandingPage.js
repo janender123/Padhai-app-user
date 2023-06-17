@@ -92,7 +92,7 @@ const NavbarLandingPage = ({ headerstyle, login }) => {
                 <Nav.Link
                   href="/authentication/sign-in"
                   bsPrefix="btn"
-                  className="btn btn-white shadow-sm me-6"
+                  className="btn btn-white shadow-sm me-3"
                 >
                   Sign In
                 </Nav.Link>
